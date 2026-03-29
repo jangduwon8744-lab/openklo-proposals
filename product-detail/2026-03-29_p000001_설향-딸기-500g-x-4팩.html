@@ -16,7 +16,7 @@
       line-height: 1.78;
     }
     .page {
-      max-width: 1020px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 32px 20px 72px;
     }
@@ -77,6 +77,7 @@
       font-size: 12px;
       color: rgba(255,255,255,0.92);
     }
+
     .section {
       background: #fff;
       border: 1px solid #e7edf5;
@@ -105,6 +106,59 @@
       font-size: 16px;
       white-space: normal;
     }
+
+    .hero-copy {
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .hero-copy-title {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: #15253b;
+    }
+    .hero-copy-text {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #415267;
+      line-height: 1.8;
+    }
+
+    .split-section {
+      overflow: hidden;
+    }
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .split-grid.reverse .split-content {
+      order: 1;
+    }
+    .split-grid.reverse .split-media {
+      order: 2;
+    }
+    .split-image {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      min-height: 360px;
+      max-height: 520px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .placeholder-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f5f9;
+      color: #7a8798;
+      font-size: 14px;
+    }
+
     .bullets {
       margin: 0;
       padding-left: 22px;
@@ -114,6 +168,28 @@
     .bullets li {
       margin: 10px 0;
     }
+
+    .point-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .point-card {
+      border: 1px solid #e9edf4;
+      border-radius: 16px;
+      padding: 18px 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+    }
+    .point-card-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #25354a;
+      font-weight: 600;
+    }
+
     .image-section img.single-image {
       width: 100%;
       border-radius: 18px;
@@ -151,6 +227,7 @@
       font-size: 13px;
       color: #6b778c;
     }
+
     .spec-table {
       display: flex;
       flex-direction: column;
@@ -177,6 +254,7 @@
       padding: 14px 16px;
       color: #233247;
     }
+
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -195,6 +273,7 @@
     .faq-a {
       color: #314155;
     }
+
     .notice {
       background: #fffaf1;
       border-color: #f2dfb0;
@@ -215,6 +294,7 @@
       text-decoration: none;
       font-weight: 700;
     }
+
     .footer {
       margin-top: 24px;
       padding: 18px 20px;
@@ -229,11 +309,25 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 900px) {
+      .split-grid,
+      .split-grid.reverse {
+        grid-template-columns: 1fr;
+      }
+      .split-grid.reverse .split-content,
+      .split-grid.reverse .split-media {
+        order: initial;
+      }
+    }
+
     @media (max-width: 768px) {
       .page {
         padding: 20px 14px 48px;
       }
       .hero-title {
+        font-size: 28px;
+      }
+      .hero-copy-title {
         font-size: 28px;
       }
       .gallery-large {
@@ -247,6 +341,9 @@
       }
       .spec-key {
         border-bottom: 1px solid #edf2f7;
+      }
+      .point-cards {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -267,56 +364,73 @@
     </section>
 
     
-    <section class="section section-compact">
-      <div class="section-title">상품 개요</div>
-      
+    <section class="section hero-copy">
+      <h2 class="hero-copy-title">산지직송 설향 딸기 500g x 4팩</h2>
+      <p class="hero-copy-text">충남 천안 땡구네딸기농장 스마트팜에서 수확한 설향을 신선하게, 1~2일 내 문앞까지.</p>
     </section>
   
 
-    <section class="section">
-      <div class="section-title">공급 소개</div>
-      <div class="paragraph">충남 천안 땡구네딸기농장에서 스마트팜으로 재배한 설향을 산지 냉장 택배로 공급합니다. 500g x 4팩 중박스 포장, D+1 출고, 기본 월 500박스(최대 1,000박스 협의)로 B2B 납품 일정에 맞춰 대응합니다.</div>
+    <section class="section split-section">
+      <div class="split-grid">
+        <div class="split-media">
+          <div class="split-image placeholder-box">이미지 준비중</div>
+        </div>
+        <div class="split-content">
+          <h3 class="section-title">달콤하고 향이 좋은 설향, 산지에서 바로 옵니다</h3>
+          <div class="paragraph">천안의 땡구네딸기농장은 스마트팜으로 온도·습도·양액을 세심하게 관리해 설향의 풍미를 살립니다. 수확한 딸기는 당일 박스포장(중박스) 후 택배로 산지직송하여 신선함을 지켜 전달합니다. 부드러운 과육과 은은한 향, 깔끔한 단맛을 편하게 즐겨 보세요.</div>
+        </div>
+      </div>
     </section>
   
 
-    <section class="section">
-      <div class="section-title">핵심 공급 포인트</div>
-      <ul class="bullets">
-        <li>산지/재배: 충남 천안, 스마트팜 관리 재배 설향</li><li>규격/포장: 500g x 4팩, 중박스, 냉장 포장</li><li>출고/배송: D+1 산지 출고, 우체국 냉장택배, 배송비 유료</li><li>수급/조건: 월 500박스 기본(최대 1,000 협의), 최소주문 1박스, 단가 협의·월 정산</li>
-      </ul>
-    </section>
-  
-
-    <section class="section image-section gallery-section">
-      <div class="section-title">상품 이미지</div>
-      <div class="gallery gallery-large">
-        
-          <figure class="gallery-item">
-            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="" />
-            
-          </figure>
-        
-          <figure class="gallery-item">
-            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%9E%AC%EB%B0%B0%EC%82%AC%EC%A7%84.jpg?raw=true" alt="" />
-            
-          </figure>
-        
-          <figure class="gallery-item">
-            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/500G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="" />
-            
-          </figure>
-        
-          <figure class="gallery-item">
-            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="" />
-            
-          </figure>
-        
+    <section class="section split-section reverse">
+      <div class="split-grid reverse">
+        <div class="split-content">
+          <h3 class="section-title">이런 분께 추천</h3>
+          <ul class="bullets">
+            <li>가족 간식·디저트로 즐기기 좋은 500g 소포장 4팩</li><li>수확 직후 포장, 평균 1~2일 내 도착하는 산지직송</li><li>균일한 품질 관리를 지향하는 스마트팜 재배</li><li>선물하기에도 깔끔한 박스포장(중박스)</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <div class="split-image placeholder-box">이미지 준비중</div>
+        </div>
       </div>
     </section>
   
 
     <section class="section">
-      <div class="section-title">공급 정보</div>
+      <h3 class="section-title">왜 이 상품일까요?</h3>
+      <div class="point-cards">
+        
+          <div class="point-card">
+            <div class="point-card-text">충남 천안 스마트팜 재배로 환경을 정밀 관리해 품질 편차를 줄이도록 노력합니다.</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">수확 후 빠른 포장과 산지직송으로 신선함을 살렸습니다.</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">500g x 4팩 알찬 구성으로 나눠 보관·나눔하기 좋습니다.</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">받는 즉시 냉장(0~5°C) 보관하면 신선함 유지에 도움이 됩니다.</div>
+          </div>
+        
+      </div>
+    </section>
+  
+
+
+    <section class="section">
+      <div class="section-title">땡구네딸기농장 이야기</div>
+      <div class="paragraph">충남 천안에서 설향을 주력으로 재배하는 땡구네딸기농장은 스마트팜 시스템으로 하루 종일 작물 상태를 확인하며 온도·습도·양액을 꼼꼼히 조절합니다. 잘 익은 열매만 골라 수확해 박스포장 후 바로 발송합니다. 산지에서 시작된 신선함을 집까지 안전하게 전해 드리는 것이 우리의 약속입니다.</div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">상품 정보</div>
       <div class="spec-table">
         
                 <div class="spec-row">
@@ -325,23 +439,18 @@
                 </div>
               
                 <div class="spec-row">
-                  <div class="spec-key">규격</div>
-                  <div class="spec-value">500g x 4팩(중박스)</div>
-                </div>
-              
-                <div class="spec-row">
-                  <div class="spec-key">출고방식</div>
-                  <div class="spec-value">택배(산지직송, 우체국 냉장)</div>
-                </div>
-              
-                <div class="spec-row">
-                  <div class="spec-key">리드타임</div>
-                  <div class="spec-value">D+1(주문 익일 출고)</div>
+                  <div class="spec-key">구성</div>
+                  <div class="spec-value">500g x 4팩(총 2kg)</div>
                 </div>
               
                 <div class="spec-row">
                   <div class="spec-key">보관방법</div>
-                  <div class="spec-value">냉장보관</div>
+                  <div class="spec-value">냉장보관(0~5°C 권장), 세척은 드시기 직전에 진행</div>
+                </div>
+              
+                <div class="spec-row">
+                  <div class="spec-key">배송</div>
+                  <div class="spec-value">산지직송 택배, 결제 후 1~2일 내 출고(주말·공휴일 제외될 수 있음)</div>
                 </div>
               
       </div>
@@ -349,17 +458,8 @@
   
 
     <section class="section notice">
-      <div class="section-title">거래 안내</div>
-      <div class="paragraph">신선식품 특성상 단순 변심 반품은 불가하며, 상품 이상 시 수령 당일 사진과 함께 문의 바랍니다.</div>
-    </section>
-  
-
-    <section class="section cta-box">
-      <div class="section-title">상담 및 문의</div>
-      <div class="paragraph">단가·납기·물량 협의는 메시지로 문의해주세요.</div>
-      <div class="cta-actions">
-        <a href="#" class="cta-button">문의하기</a>
-      </div>
+      <div class="section-title">구매 전 확인하세요</div>
+      <div class="paragraph">- 생과일 특성상 크기·색·당도는 수확 시기와 기후에 따라 달라질 수 있습니다.<br/>- 택배 배송 중 약간의 스크래치나 압상(멍)이 발생할 수 있습니다.<br/>- 신선식품 특성상 단순 변심 교환·반품이 어려우며, 상품 문제 시 수령 당일 사진과 함께 문의해 주세요.<br/>- 수령 즉시 상태 확인 후 냉장 보관해 주시고, 세척은 드시기 직전에 해주세요.<br/>- 도서산간 지역은 배송이 지연되거나 추가 운임이 발생할 수 있습니다.</div>
     </section>
   
 
