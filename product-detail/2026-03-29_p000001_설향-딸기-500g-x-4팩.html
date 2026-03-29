@@ -13,20 +13,20 @@
       background: #f6f8fb;
       color: #142033;
       font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
-      line-height: 1.7;
+      line-height: 1.78;
     }
     .page {
-      max-width: 920px;
+      max-width: 1020px;
       margin: 0 auto;
-      padding: 28px 18px 60px;
+      padding: 32px 20px 72px;
     }
     .hero {
       background: linear-gradient(135deg, #132238 0%, #1b3150 100%);
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
       color: #fff;
-      box-shadow: 0 16px 40px rgba(16, 24, 40, 0.14);
-      margin-bottom: 20px;
+      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.14);
+      margin-bottom: 28px;
     }
     .hero-image-wrap {
       width: 100%;
@@ -36,33 +36,34 @@
       width: 100%;
       display: block;
       object-fit: cover;
-      max-height: 520px;
+      max-height: 640px;
     }
     .hero-body {
-      padding: 26px 24px 28px;
+      padding: 30px 28px 32px;
     }
     .eyebrow {
       display: inline-block;
-      padding: 6px 10px;
+      padding: 7px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,0.12);
       font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .hero-title {
-      font-size: 34px;
+      font-size: 36px;
       line-height: 1.28;
       font-weight: 800;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       letter-spacing: -0.02em;
     }
     .hero-desc {
       font-size: 16px;
       color: rgba(255,255,255,0.88);
-      margin: 0 0 14px;
+      margin: 0 0 16px;
+      max-width: 760px;
     }
     .hero-meta {
       display: flex;
@@ -70,7 +71,7 @@
       flex-wrap: wrap;
     }
     .hero-chip {
-      padding: 6px 10px;
+      padding: 7px 11px;
       border-radius: 999px;
       background: rgba(255,255,255,0.10);
       font-size: 12px;
@@ -79,61 +80,74 @@
     .section {
       background: #fff;
       border: 1px solid #e7edf5;
-      border-radius: 20px;
-      padding: 22px 20px;
-      box-shadow: 0 10px 26px rgba(16, 24, 40, 0.05);
-      margin-bottom: 16px;
+      border-radius: 22px;
+      padding: 26px 24px;
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05);
+      margin-bottom: 20px;
+    }
+    .section-compact {
+      padding: 18px 22px;
     }
     .section-title {
-      margin: 0 0 10px;
-      font-size: 20px;
+      margin: 0 0 12px;
+      font-size: 22px;
       font-weight: 800;
       color: #15253b;
       letter-spacing: -0.02em;
     }
     .section-subtitle {
-      margin-top: -2px;
+      margin-top: -4px;
       font-size: 14px;
       color: #66758a;
     }
     .paragraph {
       color: #314155;
-      font-size: 15px;
+      font-size: 16px;
       white-space: normal;
     }
     .bullets {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 22px;
       color: #314155;
+      font-size: 16px;
     }
     .bullets li {
-      margin: 8px 0;
+      margin: 10px 0;
     }
     .image-section img.single-image {
       width: 100%;
-      border-radius: 16px;
+      border-radius: 18px;
       display: block;
+      max-height: 540px;
+      object-fit: cover;
     }
     .image-caption {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 13px;
       color: #6b778c;
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
+      gap: 18px;
+    }
+    .gallery-large {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
     .gallery-item {
       margin: 0;
+      background: #fff;
     }
     .gallery-item img {
       width: 100%;
       display: block;
-      border-radius: 16px;
+      border-radius: 18px;
+      min-height: 280px;
+      max-height: 420px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
     }
     .gallery-item figcaption {
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 13px;
       color: #6b778c;
     }
@@ -142,12 +156,12 @@
       flex-direction: column;
       gap: 0;
       border: 1px solid #e9edf4;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
     }
     .spec-row {
       display: grid;
-      grid-template-columns: 160px 1fr;
+      grid-template-columns: 180px 1fr;
       border-bottom: 1px solid #edf2f7;
     }
     .spec-row:last-child {
@@ -155,12 +169,12 @@
     }
     .spec-key {
       background: #f8fafc;
-      padding: 12px 14px;
+      padding: 14px 16px;
       font-weight: 700;
       color: #516173;
     }
     .spec-value {
-      padding: 12px 14px;
+      padding: 14px 16px;
       color: #233247;
     }
     .faq-list {
@@ -190,11 +204,11 @@
       border-color: #d8eee7;
     }
     .cta-actions {
-      margin-top: 14px;
+      margin-top: 16px;
     }
     .cta-button {
       display: inline-block;
-      padding: 12px 18px;
+      padding: 13px 20px;
       border-radius: 12px;
       background: #132238;
       color: #fff;
@@ -202,8 +216,8 @@
       font-weight: 700;
     }
     .footer {
-      margin-top: 20px;
-      padding: 16px 18px;
+      margin-top: 24px;
+      padding: 18px 20px;
       border-radius: 16px;
       background: #ffffff;
       border: 1px solid #e7edf5;
@@ -213,6 +227,27 @@
       justify-content: space-between;
       gap: 12px;
       flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 20px 14px 48px;
+      }
+      .hero-title {
+        font-size: 28px;
+      }
+      .gallery-large {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item img {
+        min-height: 220px;
+      }
+      .spec-row {
+        grid-template-columns: 1fr;
+      }
+      .spec-key {
+        border-bottom: 1px solid #edf2f7;
+      }
     }
   </style>
 </head>
@@ -232,7 +267,7 @@
     </section>
 
     
-    <section class="section">
+    <section class="section section-compact">
       <div class="section-title">상품 개요</div>
       
     </section>
@@ -252,9 +287,9 @@
     </section>
   
 
-    <section class="section image-section">
+    <section class="section image-section gallery-section">
       <div class="section-title">상품 이미지</div>
-      <div class="gallery">
+      <div class="gallery gallery-large">
         
           <figure class="gallery-item">
             <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="" />
