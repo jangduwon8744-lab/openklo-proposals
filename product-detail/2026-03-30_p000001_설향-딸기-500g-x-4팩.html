@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>산지직송 설향 딸기 500g x 4팩</title>
+  <meta name="description" content="충남 천안 땡구네딸기농장에서 당일 수확해 냉장 콜드체인으로 신선하게 보내드립니다." />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #f6f8fb;
+      color: #142033;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      line-height: 1.78;
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #132238 0%, #1b3150 100%);
+      border-radius: 28px;
+      overflow: hidden;
+      color: #fff;
+      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.14);
+      margin-bottom: 28px;
+    }
+    .hero-image-wrap {
+      width: 100%;
+    }
+    .hero-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      max-height: 640px;
+    }
+    .hero-body {
+      padding: 30px 28px 32px;
+    }
+    .hero-title {
+      font-size: 36px;
+      line-height: 1.28;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin: 0;
+      max-width: 760px;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #e7edf5;
+      border-radius: 22px;
+      padding: 26px 24px;
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05);
+      margin-bottom: 20px;
+    }
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 22px;
+      font-weight: 800;
+      color: #15253b;
+    }
+    .paragraph {
+      color: #314155;
+      font-size: 16px;
+    }
+    .hero-copy {
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .hero-copy-title {
+      margin: 0 0 12px;
+      font-size: 34px;
+      line-height: 1.35;
+      color: #15253b;
+    }
+    .hero-copy-text {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #415267;
+      line-height: 1.8;
+    }
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .split-grid.reverse .split-content { order: 1; }
+    .split-grid.reverse .split-media { order: 2; }
+    .split-image {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      min-height: 360px;
+      max-height: 520px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .placeholder-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f5f9;
+      color: #7a8798;
+      font-size: 14px;
+    }
+    .bullets {
+      margin: 0;
+      padding-left: 22px;
+      color: #314155;
+      font-size: 16px;
+    }
+    .bullets li {
+      margin: 10px 0;
+    }
+    .point-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .point-card {
+      border: 1px solid #e9edf4;
+      border-radius: 16px;
+      padding: 18px 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+    }
+    .point-card-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #25354a;
+      font-weight: 600;
+    }
+    .gallery {
+      display: grid;
+      gap: 18px;
+    }
+    .gallery-large {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .gallery-item {
+      margin: 0;
+      background: #fff;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      min-height: 280px;
+      max-height: 420px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .spec-table {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e9edf4;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .spec-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border-bottom: 1px solid #edf2f7;
+    }
+    .spec-row:last-child {
+      border-bottom: 0;
+    }
+    .spec-key {
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: #516173;
+    }
+    .spec-value {
+      padding: 14px 16px;
+      color: #233247;
+    }
+    .notice {
+      background: #fffaf1;
+      border-color: #f2dfb0;
+    }
+    @media (max-width: 900px) {
+      .split-grid, .split-grid.reverse {
+        grid-template-columns: 1fr;
+      }
+      .split-grid.reverse .split-content,
+      .split-grid.reverse .split-media {
+        order: initial;
+      }
+    }
+    @media (max-width: 768px) {
+      .page {
+        padding: 20px 14px 48px;
+      }
+      .hero-title {
+        font-size: 28px;
+      }
+      .gallery-large {
+        grid-template-columns: 1fr;
+      }
+      .spec-row {
+        grid-template-columns: 1fr;
+      }
+      .point-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="hero-image-wrap"><img class="hero-image" src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="설향 딸기 대표 이미지" /></div>
+      <div class="hero-body">
+        <h1 class="hero-title">산지직송 설향 딸기 500g x 4팩</h1>
+        <p class="hero-desc">충남 천안 땡구네딸기농장에서 당일 수확해 냉장 콜드체인으로 신선하게 보내드립니다.</p>
+      </div>
+    </section>
+    
+    <section class="section split-section">
+      <div class="split-grid">
+        <div class="split-media">
+          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EB%8F%99%EC%82%AC%EC%A7%84.jpg?raw=true" alt="달콤하고 향이 좋은 설향, 천안에서 바로" class="split-image" />
+        </div>
+        <div class="split-content">
+          <h3 class="section-title">달콤하고 향이 좋은 설향, 천안에서 바로</h3>
+          <div class="paragraph">설향은 부드러운 과육과 은은한 향, 깨끗한 단맛이 매력적인 품종입니다. 스마트팜 환경에서 온·습도와 빛, 양분을 세심하게 관리해 균일한 품질을 지켜냈어요. 수확 직후 빠르게 선별·포장해 예냉 후 출고하고, 우체국 냉장 배송으로 일반적으로 D+1에 받아보실 수 있습니다(지역 및 택배사 사정에 따라 변동). 500g 개별 팩 4개 구성이라 눌림을 줄이고, 보관과 나눔이 간편합니다. 보관은 냉장(0~5℃)을 권장하며, 씻지 말고 보관하시고 드시기 직전에 가볍게 세척해 주세요.</div>
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section split-section reverse">
+      <div class="split-grid reverse">
+        <div class="split-content">
+          <h3 class="section-title">신선함을 지키는 포인트</h3>
+          <ul class="bullets">
+            <li>스마트팜 재배로 생육 환경을 정밀 관리해 균일한 품질 유지</li><li>수확 후 신속 선별·포장, 전 구간 냉장 콜드체인 유지</li><li>500g 개별 트레이 4팩 구성으로 눌림 최소화</li><li>산지에서 바로 출고, 일반적으로 주문 다음 날 도착(D+1)</li>
+          </ul>
+        </div>
+        <div class="split-media">
+          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="신선함을 지키는 포인트" class="split-image" />
+        </div>
+      </div>
+    </section>
+  
+
+    <section class="section">
+      <h3 class="section-title">왜 이 상품일까요?</h3>
+      <div class="point-cards">
+        
+          <div class="point-card">
+            <div class="point-card-text">설향 특유의 달콤한 향과 부드러운 식감</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">산지직송 냉장 배송(우체국 택배)</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">중박스 포장으로 선물·가정용 모두 만족</div>
+          </div>
+        
+          <div class="point-card">
+            <div class="point-card-text">4팩 소분으로 보관·나눔·간식용으로 편리</div>
+          </div>
+        
+      </div>
+    </section>
+  
+
+    <section class="section image-section gallery-section">
+      <div class="section-title">상세 이미지</div>
+      <div class="gallery gallery-large">
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="상세 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%9E%AC%EB%B0%B0%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상세 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/500G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="상세 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상세 이미지" />
+            
+          </figure>
+        
+      </div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">천안 땡구네딸기농장의 정직한 손길</div>
+      <div class="paragraph">충남 천안의 땡구네딸기농장은 스마트팜으로 설향 딸기를 재배합니다. 매일 생육 상태를 점검하며 수확 시기를 맞추고, 수확 당일 선별·포장을 거쳐 신선한 상태로 출고합니다. 과장 없이 기본에 충실하게, 달콤하고 신선한 딸기의 제맛을 전해드리겠습니다.</div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">상품 정보</div>
+      <div class="spec-table">
+        
+              <div class="spec-row">
+                <div class="spec-key">상품명</div>
+                <div class="spec-value">설향 딸기 500g x 4팩</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">구성</div>
+                <div class="spec-value">500g x 4팩(중박스 포장)</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">보관방법</div>
+                <div class="spec-value">냉장 보관(0~5℃ 권장). 씻지 말고 보관, 섭취 직전 흐르는 물에 가볍게 세척하세요.</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">배송</div>
+                <div class="spec-value">산지직송 냉장 배송(우체국 택배). 일반적으로 D+1 도착, 지역·기상·택배사 사정에 따라 변동 가능. 배송비 유료.</div>
+              </div>
+            
+      </div>
+    </section>
+  
+
+    <section class="section notice">
+      <div class="section-title">받으신 뒤 이렇게 보관하세요</div>
+      <div class="paragraph">수령 즉시 냉장 보관해 주세요. 생과일 특성상 크기·색·모양의 차이가 있을 수 있으며, 일부 과일에 미세한 눌림이 생길 수 있습니다. 드시기 전 꼭지만 남기고 흐르는 물에 가볍게 세척하시고, 가능한 한 빠르게(2~3일 이내) 섭취하시면 맛있게 즐기실 수 있습니다.</div>
+    </section>
+  
+  </div>
+</body>
+</html>
