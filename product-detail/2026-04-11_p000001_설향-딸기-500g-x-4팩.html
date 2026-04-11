@@ -3,67 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>천안 스마트팜에서 온 달콤한 설향</title>
-  <meta name="description" content="산지의 신선함을 담은 500g x 4팩 구성으로 집에서 넉넉하게 즐기세요" />
+  <title>산지직송 설향 딸기 500g x 4팩</title>
+  <meta name="description" content="천안 땡구네딸기농장에서 재배한 설향을 산지에서 바로 출고합니다. 스마트팜 재배로 균일한 품질을 지향합니다." />
   <style>
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       padding: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       background: #f6f8fb;
       color: #142033;
-      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       line-height: 1.78;
     }
+    body.theme-standard {
+      background:
+        radial-gradient(circle at top left, rgba(55,90,150,.10), transparent 30%),
+        linear-gradient(180deg, #f6f8fb 0%, #eef3f9 100%);
+    }
     .page {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 20px 72px;
+      padding: 28px 18px 72px;
     }
     .hero {
-      background: linear-gradient(135deg, #132238 0%, #1b3150 100%);
-      border-radius: 28px;
+      position: relative;
       overflow: hidden;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #11243e 0%, #193458 100%);
       color: #fff;
-      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.14);
-      margin-bottom: 28px;
+      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.16);
+      margin-bottom: 24px;
     }
-    .hero-image-wrap {
-      width: 100%;
+    .theme-premium .hero {
+      background: linear-gradient(135deg, #0f2240 0%, #264f8f 55%, #4d6bd8 100%);
     }
-    .hero-image {
+    .theme-b2b .hero {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 45%, #334155 100%);
+    }
+    .theme-story .hero {
+      background: linear-gradient(135deg, #153022 0%, #28503a 100%);
+    }
+    .theme-event .hero {
+      background: linear-gradient(135deg, #4b1d58 0%, #7c3aed 100%);
+    }
+    .hero-media img {
       width: 100%;
       display: block;
+      max-height: 620px;
       object-fit: cover;
-      max-height: 640px;
     }
     .hero-body {
-      padding: 30px 28px 32px;
+      padding: 28px 26px 30px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
     .hero-title {
+      margin: 0 0 10px;
       font-size: 36px;
-      line-height: 1.28;
-      font-weight: 800;
-      margin: 0 0 12px;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.03em;
     }
     .hero-desc {
-      font-size: 16px;
-      color: rgba(255,255,255,0.88);
       margin: 0;
       max-width: 760px;
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
     }
     .section {
       background: #fff;
       border: 1px solid #e7edf5;
       border-radius: 22px;
-      padding: 26px 24px;
+      padding: 24px 22px;
       box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+    .theme-premium .section {
+      border-color: #dfe8fb;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.08);
+    }
+    .section-headline {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+      color: #15253b;
+    }
+    .section-subcopy {
+      margin: 0;
+      font-size: 16px;
+      color: #415267;
     }
     .section-title {
       margin: 0 0 12px;
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 900;
       color: #15253b;
     }
     .paragraph {
@@ -72,12 +115,11 @@
     }
     .hero-copy {
       text-align: center;
-      padding: 32px 24px;
     }
     .hero-copy-title {
       margin: 0 0 12px;
-      font-size: 34px;
-      line-height: 1.35;
+      font-size: 32px;
+      line-height: 1.3;
       color: #15253b;
     }
     .hero-copy-text {
@@ -85,12 +127,11 @@
       margin: 0 auto;
       font-size: 17px;
       color: #415267;
-      line-height: 1.8;
     }
     .split-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
     }
     .split-grid.reverse .split-content { order: 1; }
@@ -99,7 +140,7 @@
       width: 100%;
       display: block;
       border-radius: 18px;
-      min-height: 360px;
+      min-height: 320px;
       max-height: 520px;
       object-fit: cover;
       box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
@@ -112,26 +153,34 @@
       color: #7a8798;
       font-size: 14px;
     }
-    .bullets {
+    .bullets-list {
       margin: 0;
       padding-left: 22px;
       color: #314155;
       font-size: 16px;
     }
-    .bullets li {
+    .bullets-list li {
       margin: 10px 0;
+    }
+    .bullets-list.simple {
+      padding-left: 18px;
     }
     .point-cards {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+    }
+    .point-cards-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .point-cards-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .point-card {
       border: 1px solid #e9edf4;
       border-radius: 16px;
       padding: 18px 16px;
       background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
-      min-height: 92px;
+      min-height: 88px;
       display: flex;
       align-items: center;
     }
@@ -139,27 +188,31 @@
       font-size: 15px;
       line-height: 1.65;
       color: #25354a;
-      font-weight: 600;
+      font-weight: 700;
     }
     .gallery {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
     .gallery-large {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
     .gallery-item {
       margin: 0;
-      background: #fff;
     }
     .gallery-item img {
       width: 100%;
       display: block;
       border-radius: 18px;
-      min-height: 280px;
+      min-height: 240px;
       max-height: 420px;
       object-fit: cover;
       box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .gallery-item figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #607086;
     }
     .spec-table {
       display: flex;
@@ -179,7 +232,7 @@
     .spec-key {
       background: #f8fafc;
       padding: 14px 16px;
-      font-weight: 700;
+      font-weight: 800;
       color: #516173;
     }
     .spec-value {
@@ -190,18 +243,44 @@
       background: #fffaf1;
       border-color: #f2dfb0;
     }
+    .cta-section {
+      background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+      border-color: #d7e3ff;
+    }
+    .cta-actions {
+      margin-top: 16px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+    }
     @media (max-width: 900px) {
-      .split-grid, .split-grid.reverse {
+      .split-grid,
+      .split-grid.reverse {
         grid-template-columns: 1fr;
       }
       .split-grid.reverse .split-content,
       .split-grid.reverse .split-media {
         order: initial;
       }
+      .point-cards-2,
+      .point-cards-3 {
+        grid-template-columns: 1fr;
+      }
     }
     @media (max-width: 768px) {
       .page {
-        padding: 20px 14px 48px;
+        padding: 18px 12px 48px;
       }
       .hero-title {
         font-size: 28px;
@@ -212,68 +291,66 @@
       .spec-row {
         grid-template-columns: 1fr;
       }
-      .point-cards {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
-<body>
+<body class="theme-standard">
   <div class="page">
     <section class="hero">
-      <div class="hero-image-wrap"><img class="hero-image" src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="설향 딸기 대표 이미지" /></div>
+      <div class="hero-media"><img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/750G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="설향 딸기 대표 이미지" /></div>
       <div class="hero-body">
-        <h1 class="hero-title">천안 스마트팜에서 온 달콤한 설향</h1>
-        <p class="hero-desc">산지의 신선함을 담은 500g x 4팩 구성으로 집에서 넉넉하게 즐기세요</p>
+        <div class="hero-eyebrow">STANDARD</div>
+        <h1 class="hero-title">산지직송 설향 딸기 500g x 4팩</h1>
+        <p class="hero-desc">천안 땡구네딸기농장에서 재배한 설향을 산지에서 바로 출고합니다. 스마트팜 재배로 균일한 품질을 지향합니다.</p>
       </div>
     </section>
     
     <section class="section split-section">
-      <div class="split-grid">
+      <div class="split-grid ">
         <div class="split-media">
-          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EB%8F%99%EC%82%AC%EC%A7%84.jpg?raw=true" alt="설향의 부드러운 단맛과 향" class="split-image" />
+          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EB%8F%99%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상품 특징" class="split-image" />
         </div>
         <div class="split-content">
-          <h3 class="section-title">설향의 부드러운 단맛과 향</h3>
-          <div class="paragraph">설향은 은은한 향과 부드러운 식감, 과즙 가득한 단맛이 매력적인 품종입니다. 천안 땡구네딸기농장 스마트팜에서 온도·습도·양분을 세심하게 관리해 균일한 품질을 유지하고, 알알이 선명한 빛깔과 깔끔한 단맛을 살렸습니다.</div>
+          <h3 class="section-title">상품 특징</h3>
+          <div class="paragraph">설향 품종 특유의 은은한 향과 부드러운 과육을 담았습니다. 산지에서 선별·포장해 출고하며, 생과일 특성상 개체별 크기와 당도에는 차이가 있을 수 있습니다.</div>
         </div>
       </div>
     </section>
   
 
-    <section class="section split-section reverse">
+    <section class="section split-section">
       <div class="split-grid reverse">
-        <div class="split-content">
-          <h3 class="section-title">이런 점이 좋아요</h3>
-          <ul class="bullets">
-            <li>천안 산지 재배 설향, 스마트팜 관리로 균일한 품질</li><li>선홍빛 과육과 은은한 향, 깔끔한 단맛</li><li>500g x 4팩 소분 구성으로 보관·나눔 편리</li><li>택배 배송, 영업일 기준 D+1 출고(상황에 따라 변동 가능)</li>
-          </ul>
-        </div>
         <div class="split-media">
-          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="이런 점이 좋아요" class="split-image" />
+          <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="핵심 포인트" class="split-image" />
+        </div>
+        <div class="split-content">
+          <h3 class="section-title">핵심 포인트</h3>
+          <ul class="bullets-list">
+            <li>달콤한 풍미</li><li>산뜻한 식감</li><li>깔끔한 포장</li><li>제철 과일</li>
+          </ul>
         </div>
       </div>
     </section>
   
 
     <section class="section">
-      <h3 class="section-title">왜 이 상품일까요?</h3>
-      <div class="point-cards">
+      <div class="section-title">왜 이 상품일까요?</div>
+      <div class="point-cards point-cards-2">
         
           <div class="point-card">
-            <div class="point-card-text">스마트팜 재배로 안정적인 당도와 신선함을 지향합니다</div>
+            <div class="point-card-text">당일 수확</div>
           </div>
         
           <div class="point-card">
-            <div class="point-card-text">부담 없고 산뜻한 단맛의 설향 품종</div>
+            <div class="point-card-text">산지 직송</div>
           </div>
         
           <div class="point-card">
-            <div class="point-card-text">500g 개별 팩으로 꺼내 먹기 좋고 보관이 쉬워요</div>
+            <div class="point-card-text">선별 출고</div>
           </div>
         
           <div class="point-card">
-            <div class="point-card-text">맛 보관 팁: 씻지 말고 냉장 보관, 드시기 직전에 살짝 헹궈주세요</div>
+            <div class="point-card-text">신선 포장</div>
           </div>
         
       </div>
@@ -309,8 +386,8 @@
   
 
     <section class="section">
-      <div class="section-title">천안 땡구네딸기농장의 정성</div>
-      <div class="paragraph">땡구네딸기농장은 천안 지역에서 스마트팜으로 설향을 재배합니다. 재배 환경을 세심히 조절해 계절 변화에도 안정적인 품질을 유지하고, 설향 고유의 향과 식감을 살리는 데 집중하고 있습니다. 신선함을 해치지 않도록 꼼꼼히 선별해 포장해 보내드립니다.</div>
+      <div class="section-title">재배 이야기</div>
+      <div class="paragraph">설향 품종 특유의 은은한 향과 부드러운 과육을 담았습니다. 산지에서 선별·포장해 출고하며, 생과일 특성상 개체별 크기와 당도에는 차이가 있을 수 있습니다.</div>
     </section>
   
 
@@ -325,17 +402,17 @@
             
               <div class="spec-row">
                 <div class="spec-key">구성</div>
-                <div class="spec-value">500g × 4팩</div>
+                <div class="spec-value">500g x 4팩(총 2kg)</div>
               </div>
             
               <div class="spec-row">
                 <div class="spec-key">보관방법</div>
-                <div class="spec-value">냉장 0~5°C 보관. 물기에 약하므로 씻지 말고 보관하며, 드시기 직전에 흐르는 물에 가볍게 세척하세요. 용기 바닥에 키친타월을 깔아 수분을 흡수시키면 더 오래 신선합니다.</div>
+                <div class="spec-value">수령 즉시 냉장 보관, 물기 제거 후 가급적 빠르게 섭취</div>
               </div>
             
               <div class="spec-row">
                 <div class="spec-key">배송</div>
-                <div class="spec-value">택배 배송 / 영업일 기준 D+1 출고(지역·기상·택배사 사정에 따라 변동 가능)</div>
+                <div class="spec-value">산지직송(출고지: 천안), 배송 일정은 주문 시 안내</div>
               </div>
             
       </div>
@@ -343,8 +420,8 @@
   
 
     <section class="section notice">
-      <div class="section-title">구매 전 안내</div>
-      <div class="paragraph">신선식품 특성상 수령 즉시 상태 확인과 냉장 보관을 권장드립니다. 과실 크기·색상은 자연재배 특성상 개체 차이가 있을 수 있습니다. 배송 중 충격으로 약간의 멍이나 눌림이 발생할 수 있어, 개봉 전후 파손이 심한 경우 수령 당일 사진과 함께 문의해 주세요. 단순 변심에 의한 교환·반품은 어려울 수 있습니다. 알레르기 등 개인 체질에 따라 반응이 다를 수 있으니 섭취 전 확인해 주세요.</div>
+      <div class="section-title">신선식품 안내</div>
+      <div class="paragraph">신선식품 특성상 수령 즉시 상태를 확인해주세요. 문제가 있을 경우 사진과 함께 문의주시면 빠르게 안내드리겠습니다. 보관은 가급적 냉장(또는 냉동) 권장입니다.</div>
     </section>
   
   </div>
