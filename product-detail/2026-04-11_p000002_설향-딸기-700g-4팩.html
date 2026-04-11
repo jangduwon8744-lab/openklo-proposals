@@ -3,67 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>천안 설향 딸기</title>
-  <meta name="description" content="" />
+  <title>상품 개요</title>
+  <meta name="description" content="농가: 땡구네딸기농장(천안)
+재배: 스마트팜
+품종: 설향
+월 공급 가능 물량: 1,600(세부 규격 합산, 협의)
+박스 규격: 700g×4EA / 500g×4EA" />
   <style>
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       padding: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       background: #f6f8fb;
       color: #142033;
-      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
       line-height: 1.78;
     }
+    body.theme-b2b {
+      background:
+        radial-gradient(circle at top left, rgba(55,90,150,.10), transparent 30%),
+        linear-gradient(180deg, #f6f8fb 0%, #eef3f9 100%);
+    }
     .page {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 32px 20px 72px;
+      padding: 28px 18px 72px;
     }
     .hero {
-      background: linear-gradient(135deg, #132238 0%, #1b3150 100%);
-      border-radius: 28px;
+      position: relative;
       overflow: hidden;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #11243e 0%, #193458 100%);
       color: #fff;
-      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.14);
-      margin-bottom: 28px;
+      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.16);
+      margin-bottom: 24px;
     }
-    .hero-image-wrap {
-      width: 100%;
+    .theme-premium .hero {
+      background: linear-gradient(135deg, #0f2240 0%, #264f8f 55%, #4d6bd8 100%);
     }
-    .hero-image {
+    .theme-b2b .hero {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 45%, #334155 100%);
+    }
+    .theme-story .hero {
+      background: linear-gradient(135deg, #153022 0%, #28503a 100%);
+    }
+    .theme-event .hero {
+      background: linear-gradient(135deg, #4b1d58 0%, #7c3aed 100%);
+    }
+    .hero-media img {
       width: 100%;
       display: block;
+      max-height: 620px;
       object-fit: cover;
-      max-height: 640px;
     }
     .hero-body {
-      padding: 30px 28px 32px;
+      padding: 28px 26px 30px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
     }
     .hero-title {
+      margin: 0 0 10px;
       font-size: 36px;
-      line-height: 1.28;
-      font-weight: 800;
-      margin: 0 0 12px;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.03em;
     }
     .hero-desc {
-      font-size: 16px;
-      color: rgba(255,255,255,0.88);
       margin: 0;
       max-width: 760px;
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
     }
     .section {
       background: #fff;
       border: 1px solid #e7edf5;
       border-radius: 22px;
-      padding: 26px 24px;
+      padding: 24px 22px;
       box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+    .theme-premium .section {
+      border-color: #dfe8fb;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.08);
+    }
+    .section-headline {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+      color: #15253b;
+    }
+    .section-subcopy {
+      margin: 0;
+      font-size: 16px;
+      color: #415267;
     }
     .section-title {
       margin: 0 0 12px;
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 900;
       color: #15253b;
     }
     .paragraph {
@@ -72,12 +119,11 @@
     }
     .hero-copy {
       text-align: center;
-      padding: 32px 24px;
     }
     .hero-copy-title {
       margin: 0 0 12px;
-      font-size: 34px;
-      line-height: 1.35;
+      font-size: 32px;
+      line-height: 1.3;
       color: #15253b;
     }
     .hero-copy-text {
@@ -85,12 +131,11 @@
       margin: 0 auto;
       font-size: 17px;
       color: #415267;
-      line-height: 1.8;
     }
     .split-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
     }
     .split-grid.reverse .split-content { order: 1; }
@@ -99,7 +144,7 @@
       width: 100%;
       display: block;
       border-radius: 18px;
-      min-height: 360px;
+      min-height: 320px;
       max-height: 520px;
       object-fit: cover;
       box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
@@ -112,26 +157,34 @@
       color: #7a8798;
       font-size: 14px;
     }
-    .bullets {
+    .bullets-list {
       margin: 0;
       padding-left: 22px;
       color: #314155;
       font-size: 16px;
     }
-    .bullets li {
+    .bullets-list li {
       margin: 10px 0;
+    }
+    .bullets-list.simple {
+      padding-left: 18px;
     }
     .point-cards {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+    }
+    .point-cards-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .point-cards-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .point-card {
       border: 1px solid #e9edf4;
       border-radius: 16px;
       padding: 18px 16px;
       background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
-      min-height: 92px;
+      min-height: 88px;
       display: flex;
       align-items: center;
     }
@@ -139,27 +192,31 @@
       font-size: 15px;
       line-height: 1.65;
       color: #25354a;
-      font-weight: 600;
+      font-weight: 700;
     }
     .gallery {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
     .gallery-large {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
     .gallery-item {
       margin: 0;
-      background: #fff;
     }
     .gallery-item img {
       width: 100%;
       display: block;
       border-radius: 18px;
-      min-height: 280px;
+      min-height: 240px;
       max-height: 420px;
       object-fit: cover;
       box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .gallery-item figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #607086;
     }
     .spec-table {
       display: flex;
@@ -179,7 +236,7 @@
     .spec-key {
       background: #f8fafc;
       padding: 14px 16px;
-      font-weight: 700;
+      font-weight: 800;
       color: #516173;
     }
     .spec-value {
@@ -190,18 +247,44 @@
       background: #fffaf1;
       border-color: #f2dfb0;
     }
+    .cta-section {
+      background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+      border-color: #d7e3ff;
+    }
+    .cta-actions {
+      margin-top: 16px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+    }
     @media (max-width: 900px) {
-      .split-grid, .split-grid.reverse {
+      .split-grid,
+      .split-grid.reverse {
         grid-template-columns: 1fr;
       }
       .split-grid.reverse .split-content,
       .split-grid.reverse .split-media {
         order: initial;
       }
+      .point-cards-2,
+      .point-cards-3 {
+        grid-template-columns: 1fr;
+      }
     }
     @media (max-width: 768px) {
       .page {
-        padding: 20px 14px 48px;
+        padding: 18px 12px 48px;
       }
       .hero-title {
         font-size: 28px;
@@ -212,33 +295,119 @@
       .spec-row {
         grid-template-columns: 1fr;
       }
-      .point-cards {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
-<body>
+<body class="theme-b2b">
   <div class="page">
     <section class="hero">
-      <div class="hero-image-wrap"><img class="hero-image" src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%84%A0%EB%AC%BC%EC%84%B8%ED%8A%B8.jpg?raw=true" alt="천안 설향 딸기" /></div>
+      <div class="hero-media"><img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%84%A0%EB%AC%BC%EC%84%B8%ED%8A%B8.jpg?raw=true" alt="상품 개요" /></div>
       <div class="hero-body">
-        <h1 class="hero-title">천안 설향 딸기</h1>
-        
+        <div class="hero-eyebrow">B2B</div>
+        <h1 class="hero-title">상품 개요</h1>
+        <p class="hero-desc">농가: 땡구네딸기농장(천안)
+재배: 스마트팜
+품종: 설향
+월 공급 가능 물량: 1,600(세부 규격 합산, 협의)
+박스 규격: 700g×4EA / 500g×4EA</p>
       </div>
     </section>
     
-
-
-
-
-
-    <section class="section notice">
-      <div class="section-title">신선 딸기 구매 안내</div>
-      <div class="paragraph">- 신선식품 특성상 크기·색·맛에는 자연스러운 편차가 있을 수 있습니다.<br/>- 배송 중 미세한 흠집이 생길 수 있습니다. 품질에 큰 문제가 없는 경우 교환·반품이 어려울 수 있습니다.<br/>- 수령 즉시 냉장 보관하고 가능한 빨리 드세요. 설향은 과육이 부드러워 장기 보관에 취약합니다.<br/>- 상품에 이상이 있을 경우, 수령 당일 사진과 함께 문의해 주세요.</div>
+    <section class="section section-title-box">
+      <h2 class="section-headline">상품 개요</h2>
+      <p class="section-subcopy">땡구네딸기농장 · 스마트팜 재배 · 700g × 4팩 세트 · 산지 출고 B2B</p>
     </section>
   
 
+    <section class="section">
+      <div class="section-title">공급 소개</div>
+      <div class="paragraph">농가: 땡구네딸기농장(천안)<br/>재배: 스마트팜<br/>품종: 설향<br/>월 공급 가능 물량: 1,600(세부 규격 합산, 협의)<br/>박스 규격: 700g×4EA / 500g×4EA</div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">핵심 공급 포인트</div>
+      <ul class="bullets-list simple">
+        <li>산지 직송 가능</li><li>공급 일정 협의 가능</li><li>상세 조건 별도 협의</li>
+      </ul>
+    </section>
+  
+
+    <section class="section image-section gallery-section">
+      <div class="section-title">상품 이미지</div>
+      <div class="gallery gallery-large">
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%9E%AC%EB%B0%B0%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상품 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/500G%ED%8F%AC%EC%9E%A5%EC%BB%B7.jpg?raw=true" alt="상품 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%99%B8%EB%B6%80%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상품 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EB%8F%99%EC%82%AC%EC%A7%84.jpg?raw=true" alt="상품 이미지" />
+            
+          </figure>
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%84%A0%EB%AC%BC%EC%84%B8%ED%8A%B8.jpg?raw=true" alt="상품 이미지" />
+            
+          </figure>
+        
+      </div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">공급 정보</div>
+      <div class="spec-table">
+        
+              <div class="spec-row">
+                <div class="spec-key">상품명</div>
+                <div class="spec-value">설향 딸기 700g × 4팩</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">구성</div>
+                <div class="spec-value">700g × 4팩(박스 기준), 옵션: 500g × 4팩 운영</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">보관방법</div>
+                <div class="spec-value">수령 즉시 냉장 보관 권장</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">배송</div>
+                <div class="spec-value">산지 출고, 배송 방식·납기 협의</div>
+              </div>
+            
+      </div>
+    </section>
+  
+
+    <section class="section notice">
+      <div class="section-title">거래 안내</div>
+      <div class="paragraph">월 공급 가능 물량 1,600(규격 합산) 기준으로 운영됩니다.<br/>출고 컷오프, 납기, 물류 동선(직송/집하) 사전 협의가 필요합니다.<br/>포장 규격 선택: 700g×4 또는 500g×4.<br/>라벨, 납품서, 바코드 등 부자재 적용 여부를 확인해 주세요.<br/>파손·감모 허용 기준 및 클레임 처리 프로세스는 계약 전 확정 바랍니다.<br/>상온 노출 시간을 최소화하고 입고 즉시 냉장 보관해 주세요.</div>
+    </section>
+  
+
+    <section class="section cta-section">
+      <div class="section-title">상담 및 문의</div>
+      <div class="paragraph">필요 수량, 납품 일정, 배송지, 포장 규격(700g×4/500g×4), 반복 발주 주기를 공유해 주시면 빠르게 견적 및 리드타임을 회신드립니다.</div>
+      <div class="cta-actions">
+        <a class="cta-button" href="#" target="_blank" rel="noopener noreferrer">문의하기</a>
+      </div>
+    </section>
+  
   </div>
 </body>
 </html>
