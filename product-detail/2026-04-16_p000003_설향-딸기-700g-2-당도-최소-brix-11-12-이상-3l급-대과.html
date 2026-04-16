@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프리미엄 소개</title>
+  <meta name="description" content="일교차 큰 천안에서 스마트팜으로 키웠습니다. 친환경 자재 중심으로 관리하고 농약 사용을 최소화했습니다. 완숙기에 수확해 11~13 Brix 맛을 지킵니다. 3L 대과만 아침에 골라 담습니다. 예냉 후 정갈하게 포장해 보내드립니다." />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+      background: #f6f8fb;
+      color: #142033;
+      line-height: 1.78;
+    }
+    body.theme-premium {
+      background:
+        radial-gradient(circle at top left, rgba(55,90,150,.10), transparent 30%),
+        linear-gradient(180deg, #f6f8fb 0%, #eef3f9 100%);
+    }
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #11243e 0%, #193458 100%);
+      color: #fff;
+      box-shadow: 0 18px 42px rgba(16, 24, 40, 0.16);
+      margin-bottom: 24px;
+    }
+    .theme-premium .hero {
+      background: linear-gradient(135deg, #0f2240 0%, #264f8f 55%, #4d6bd8 100%);
+    }
+    .theme-b2b .hero {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 45%, #334155 100%);
+    }
+    .theme-story .hero {
+      background: linear-gradient(135deg, #153022 0%, #28503a 100%);
+    }
+    .theme-event .hero {
+      background: linear-gradient(135deg, #4b1d58 0%, #7c3aed 100%);
+    }
+    .hero-media img {
+      width: 100%;
+      display: block;
+      max-height: 620px;
+      object-fit: cover;
+    }
+    .hero-body {
+      padding: 28px 26px 30px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .hero-title {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1.24;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .hero-desc {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #e7edf5;
+      border-radius: 22px;
+      padding: 24px 22px;
+      box-shadow: 0 12px 28px rgba(16, 24, 40, 0.05);
+      margin-bottom: 18px;
+    }
+    .theme-premium .section {
+      border-color: #dfe8fb;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.08);
+    }
+    .section-headline {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 900;
+      color: #15253b;
+    }
+    .section-subcopy {
+      margin: 0;
+      font-size: 16px;
+      color: #415267;
+    }
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 22px;
+      font-weight: 900;
+      color: #15253b;
+    }
+    .paragraph {
+      color: #314155;
+      font-size: 16px;
+    }
+    .hero-copy {
+      text-align: center;
+    }
+    .hero-copy-title {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.3;
+      color: #15253b;
+    }
+    .hero-copy-text {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: #415267;
+    }
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+    .split-grid.reverse .split-content { order: 1; }
+    .split-grid.reverse .split-media { order: 2; }
+    .split-image {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      min-height: 320px;
+      max-height: 520px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .placeholder-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f2f5f9;
+      color: #7a8798;
+      font-size: 14px;
+    }
+    .bullets-list {
+      margin: 0;
+      padding-left: 22px;
+      color: #314155;
+      font-size: 16px;
+    }
+    .bullets-list li {
+      margin: 10px 0;
+    }
+    .bullets-list.simple {
+      padding-left: 18px;
+    }
+    .point-cards {
+      display: grid;
+      gap: 14px;
+    }
+    .point-cards-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .point-cards-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .point-card {
+      border: 1px solid #e9edf4;
+      border-radius: 16px;
+      padding: 18px 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+    }
+    .point-card-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #25354a;
+      font-weight: 700;
+    }
+    .gallery {
+      display: grid;
+      gap: 16px;
+    }
+    .gallery-large {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .gallery-item {
+      margin: 0;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-radius: 18px;
+      min-height: 240px;
+      max-height: 420px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(16, 24, 40, 0.08);
+    }
+    .gallery-item figcaption {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #607086;
+    }
+    .spec-table {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e9edf4;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .spec-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      border-bottom: 1px solid #edf2f7;
+    }
+    .spec-row:last-child {
+      border-bottom: 0;
+    }
+    .spec-key {
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: #516173;
+    }
+    .spec-value {
+      padding: 14px 16px;
+      color: #233247;
+    }
+    .notice {
+      background: #fffaf1;
+      border-color: #f2dfb0;
+    }
+    .cta-section {
+      background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+      border-color: #d7e3ff;
+    }
+    .cta-actions {
+      margin-top: 16px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+    }
+    @media (max-width: 900px) {
+      .split-grid,
+      .split-grid.reverse {
+        grid-template-columns: 1fr;
+      }
+      .split-grid.reverse .split-content,
+      .split-grid.reverse .split-media {
+        order: initial;
+      }
+      .point-cards-2,
+      .point-cards-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .page {
+        padding: 18px 12px 48px;
+      }
+      .hero-title {
+        font-size: 28px;
+      }
+      .gallery-large {
+        grid-template-columns: 1fr;
+      }
+      .spec-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="theme-premium">
+  <div class="page">
+    <section class="hero">
+      <div class="hero-media"><img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%84%A0%EB%AC%BC%EC%84%B8%ED%8A%B8.jpg?raw=true" alt="프리미엄 소개" /></div>
+      <div class="hero-body">
+        <div class="hero-eyebrow">PREMIUM</div>
+        <h1 class="hero-title">프리미엄 소개</h1>
+        <p class="hero-desc">일교차 큰 천안에서 스마트팜으로 키웠습니다. 친환경 자재 중심으로 관리하고 농약 사용을 최소화했습니다. 완숙기에 수확해 11~13 Brix 맛을 지킵니다. 3L 대과만 아침에 골라 담습니다. 예냉 후 정갈하게 포장해 보내드립니다.</p>
+      </div>
+    </section>
+    
+    <section class="section section-title-box">
+      <h2 class="section-headline">프리미엄 소개</h2>
+      <p class="section-subcopy">천안 땡구네딸기농장. 당일 수확·예냉·포장. 선물에 맞춘 단단한 달콤함.</p>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">가치 제안</div>
+      <div class="paragraph">일교차 큰 천안에서 스마트팜으로 키웠습니다. 친환경 자재 중심으로 관리하고 농약 사용을 최소화했습니다. 완숙기에 수확해 11~13 Brix 맛을 지킵니다. 3L 대과만 아침에 골라 담습니다. 예냉 후 정갈하게 포장해 보내드립니다.</div>
+    </section>
+  
+
+    <section class="section image-section gallery-section">
+      <div class="section-title">프리미엄 이미지</div>
+      <div class="gallery gallery-large">
+        
+          <figure class="gallery-item">
+            <img src="https://github.com/jangduwon8744-lab/trace_image/blob/main/%EC%84%A0%EB%AC%BC%EC%84%B8%ED%8A%B8.jpg?raw=true" alt="프리미엄 이미지" />
+            
+          </figure>
+        
+      </div>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">차별 포인트</div>
+      <ul class="bullets-list simple">
+        <li>3L 대과 선별, 최소 11 Brix 기준</li><li>당일 수확·예냉·포장으로 신선도 유지</li><li>개별 칸 트레이 + 리드용기 이중 밀봉</li><li>선물용 하드케이스 + 아이스박스 완충 포장, 산지 직송</li>
+      </ul>
+    </section>
+  
+
+    <section class="section">
+      <div class="section-title">상품 및 포장 정보</div>
+      <div class="spec-table">
+        
+              <div class="spec-row">
+                <div class="spec-key">상품명</div>
+                <div class="spec-value">설향 딸기 700G × 2(3L 대과, 최소 11 Brix)</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">구성</div>
+                <div class="spec-value">700g 트레이 × 2, 3중 포장(트레이/리드용기 이중 밀봉/선물용 하드케이스+아이스박스)</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">보관방법</div>
+                <div class="spec-value">수령 즉시 냉장(0~5℃). 세척은 드시기 직전. 2~3일 내 섭취 권장.</div>
+              </div>
+            
+              <div class="spec-row">
+                <div class="spec-key">배송</div>
+                <div class="spec-value">산지 직송. 평일 오전 10시 이전 결제 시 당일 출고.</div>
+              </div>
+            
+      </div>
+    </section>
+  
+
+    <section class="section notice">
+      <div class="section-title">안내문</div>
+      <div class="paragraph">생과일 특성상 크기·모양에는 미세한 차이가 있을 수 있습니다. 당도는 수확일 기준 11~13 Brix 범위 내에서 편차가 있을 수 있습니다. 상온 방치는 피하고, 수령 즉시 냉장 보관해주세요. 파손·냉해 등 문제 발생 시 수령 당일 사진과 함께 문의 바랍니다.</div>
+    </section>
+  
+
+    <section class="section cta-section">
+      <div class="section-title">상담 문의</div>
+      <div class="paragraph">런칭 프로모션: 첫 거래 기업 고객, 10박스 이상 주문 시 1박스 추가 증정 또는 무료 배송. 명절·기념일 시즌 한정 패키지 운영. 후기 사진 제공 시 다음 거래 5% 할인 또는 샘플 박스 제공.</div>
+      <div class="cta-actions">
+        <a class="cta-button" href="#" target="_blank" rel="noopener noreferrer">문의하기</a>
+      </div>
+    </section>
+  
+  </div>
+</body>
+</html>
