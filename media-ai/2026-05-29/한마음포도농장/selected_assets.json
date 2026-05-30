@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-05-30T01:25:50.403Z",
+  "asset_count": 14,
+  "assets": [
+    {
+      "asset_type": "farm_main",
+      "source_file": "frame_001.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/farm_main.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/farm_main.jpg"
+    },
+    {
+      "asset_type": "brix",
+      "source_file": "frame_002.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/brix.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/brix.jpg"
+    },
+    {
+      "asset_type": "hardness",
+      "source_file": "frame_003.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/hardness.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/hardness.jpg"
+    },
+    {
+      "asset_type": "sorting",
+      "source_file": "frame_004.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/sorting.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/sorting.jpg"
+    },
+    {
+      "asset_type": "packing",
+      "source_file": "frame_005.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/packing.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/packing.jpg"
+    },
+    {
+      "asset_type": "hygiene",
+      "source_file": "frame_006.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/hygiene.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/hygiene.jpg"
+    },
+    {
+      "asset_type": "farm_view",
+      "source_file": "frame_007.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/farm_view.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/farm_view.jpg"
+    },
+    {
+      "asset_type": "detail_01",
+      "source_file": "frame_008.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/detail_01.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/detail_01.jpg"
+    },
+    {
+      "asset_type": "detail_02",
+      "source_file": "frame_009.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/detail_02.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/detail_02.jpg"
+    },
+    {
+      "asset_type": "detail_03",
+      "source_file": "frame_010.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/detail_03.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/detail_03.jpg"
+    },
+    {
+      "asset_type": "instagram_01",
+      "source_file": "frame_011.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/instagram_01.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/instagram_01.jpg"
+    },
+    {
+      "asset_type": "instagram_02",
+      "source_file": "frame_012.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/instagram_02.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/instagram_02.jpg"
+    },
+    {
+      "asset_type": "youtube_thumbnail",
+      "source_file": "frame_013.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/youtube_thumbnail.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/youtube_thumbnail.jpg"
+    },
+    {
+      "asset_type": "shorts_thumbnail",
+      "source_file": "frame_014.jpg",
+      "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/한마음포도농장/selected/shorts_thumbnail.jpg",
+      "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%ED%95%9C%EB%A7%88%EC%9D%8C%ED%8F%AC%EB%8F%84%EB%86%8D%EC%9E%A5/selected/shorts_thumbnail.jpg"
+    }
+  ]
+}
