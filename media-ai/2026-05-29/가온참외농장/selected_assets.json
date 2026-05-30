@@ -1,6 +1,9 @@
 {
-  "generated_at": "2026-05-30T02:12:48.477Z",
+  "generated_at": "2026-05-30T03:14:37.461Z",
   "asset_count": 14,
+  "selection_mode": "fallback_index",
+  "analysis_count": 0,
+  "selected_count": 14,
   "assets": [
     {
       "asset_type": "farm_main",
