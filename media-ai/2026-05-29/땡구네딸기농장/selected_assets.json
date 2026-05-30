@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T04:44:32.853Z",
+  "generated_at": "2026-05-30T05:01:01.055Z",
   "asset_count": 11,
   "selection_mode": "ai_analysis",
   "analysis_count": 3,
@@ -7,7 +7,7 @@
   "assets": [
     {
       "asset_type": "farm_main",
-      "source_file": "image_02.jpg",
+      "source_file": "image_01.jpg",
       "local_path": "/mnt/c/Users/wkd87/OPENKLO_MEDIA/2026-05-29/땡구네딸기농장/selected/farm_main.jpg",
       "public_url": "https://jangduwon8744-lab.github.io/openklo-proposals/media-ai/2026-05-29/%EB%95%A1%EA%B5%AC%EB%84%A4%EB%94%B8%EA%B8%B0%EB%86%8D%EC%9E%A5/selected/farm_main.jpg"
     },
