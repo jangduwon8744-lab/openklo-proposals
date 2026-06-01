@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONEFLOW 참외 인스타그램 판매문법 리포트</title>
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --card:#FFFFFF;
+    --ink:#233238;
+    --muted:#5E6A71;
+    --accent:#F4C84B; /* melon yellow */
+    --accent-2:#2E7D62; /* green */
+    --line:#E8E5DD;
+    --good:#2E7D62;
+    --warn:#B26A00;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Roboto,Helvetica,Arial,"Apple SD Gothic Neo",sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
+  header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+  .logo{
+    width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#FFE68A);
+    box-shadow:0 6px 16px rgba(0,0,0,.08);position:relative
+  }
+  .logo:after{content:"";position:absolute;inset:8px;border-radius:8px;background:var(--card)}
+  h1{font-size:22px;margin:0}
+  .subtitle{color:var(--muted);font-size:13px;margin-top:2px}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 10px rgba(0,0,0,.04)}
+  .card h3{margin:0 0 10px 0;font-size:16px}
+  .card h2{margin:0 0 8px 0;font-size:18px}
+  .kpi{display:flex;gap:16px;flex-wrap:wrap}
+  .kpi .item{flex:1 1 200px;background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:14px}
+  .kpi .val{font-size:20px;font-weight:700}
+  .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#FFF7DB;border:1px solid #FFE28A;color:#7A5A00;font-weight:600;font-size:12px;margin:2px 6px 2px 0}
+  .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#E9F5F0;color:#1D6B54;font-weight:600;font-size:12px;margin:2px 6px 2px 0;border:1px solid #CFE8DF}
+  .bar{height:10px;background:#F1EFE8;border-radius:999px;overflow:hidden}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent-2),#55B38F)}
+  .muted{color:var(--muted)}
+  .note{background:#FFF6E8;border:1px solid #FFE2B7;color:#7A4E00;padding:12px;border-radius:10px;font-size:13px}
+  .hl{color:var(--accent-2);font-weight:700}
+  .hero-sample{border-left:4px solid var(--accent-2);padding:8px 12px;background:#F4FBF8;border-radius:8px;margin:8px 0}
+  ul{padding-left:18px;margin:8px 0}
+  .mini{font-size:12px;color:var(--muted)}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  .pill{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:#FCFCFA}
+  .table{width:100%;border-collapse:collapse;font-size:13px}
+  .table th,.table td{border-bottom:1px solid var(--line);padding:10px 8px;text-align:left;vertical-align:top}
+  .table th{color:var(--muted);font-weight:600;background:#FAFAF5}
+  .cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--accent-2);color:white;font-weight:700;text-decoration:none}
+  .cta span{font-size:12px;opacity:.9}
+  .divider{height:1px;background:var(--line);margin:14px 0}
+  .col-4{grid-column:span 4}
+  .col-6{grid-column:span 6}
+  .col-8{grid-column:span 8}
+  .col-12{grid-column:span 12}
+  @media (max-width:980px){
+    .col-4,.col-6,.col-8,.col-12{grid-column:span 12}
+  }
+  .footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:right}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true"></div>
+    <div>
+      <h1>ONEFLOW 인스타그램 분석 기반 참외 판매문법 리포트</h1>
+      <div class="subtitle">검색어: 참외 · 조사일: 2026-06-01 · 분석대상: 릴스/게시물 3건</div>
+    </div>
+  </header>
+
+  <!-- 1. Executive Summary -->
+  <section class="card">
+    <h2>1. Executive Summary</h2>
+    <div class="grid">
+      <div class="col-8">
+        <ul>
+          <li>핵심 인사이트: 당도·맛을 첫 3초에 강조, 가족/아이 간식 맥락, 신선배송 신뢰 포인트가 반복 노출됨.</li>
+          <li>CTA 부재: 분석 샘플에서는 구매 유도 문구가 명확히 제시되지 않아, 상세페이지·썸네일·릴스용 실무형 CTA 보강이 필요.</li>
+          <li>데이터 주의: 검색어는 ‘참외’이나 원본 캡션은 ‘적포도’로 보이는 불일치가 존재함. 패턴은 판매문법 관점에서 전이 적용하되, 수치·품종은 참외 실데이터로 치환 필요.</li>
+          <li>실행 권고: 로트(LOT) 단위 당도·수확일·선별등급·포장·이력추적 정보를 HERO/썸네일/후킹에 구조화해 신뢰 기반 전환을 설계.</li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <div class="kpi">
+          <div class="item">
+            <div class="mini">총 분석 건수</div>
+            <div class="val">3</div>
+          </div>
+          <div class="item">
+            <div class="mini">CTA 집계</div>
+            <div class="val">없음</div>
+          </div>
+          <div class="item">
+            <div class="mini">핵심문구 빈도</div>
+            <div><span class="badge">고당도 ×3</span><span class="badge">신선배송 ×3</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 데이터 개요 -->
+  <section class="card">
+    <h2>2. 데이터 개요</h2>
+    <div class="grid">
+      <div class="col-6">
+        <table class="table">
+          <tr><th>검색어</th><td>참외</td></tr>
+          <tr><th>총 분석 건수</th><td>3 (동일 URL 중복)</td></tr>
+          <tr><th>감성/생활장면</th><td><span class="tag">가족감성 ×3</span><span class="tag">아이간식 ×3</span></td></tr>
+          <tr><th>첫 3초 전략</th><td>당도·맛 강조형 도입부 ×3</td></tr>
+          <tr><th>CTA 유형</th><td>집계 없음</td></tr>
+        </table>
+      </div>
+      <div class="col-6">
+        <div class="note">
+          데이터 불일치 가능성 알림: 검색어는 ‘참외’이나, 수집된 캡션은 ‘적포도(20°Bx 언급)’ 관련 내용으로 확인됨. 본 리포트는 판매문법(당도·신선배송·가족/아이 맥락·첫 3초 강조)을 참외로 전이 적용하는 전략 제안서이며, 실제 수치/품종/원산지는 농가 데이터로 대체해야 합니다.
+        </div>
+        <div class="divider"></div>
+        <div class="mini">해시태그 샘플: #협찬, #돌쇠네적포도, #돌쇠네농산물</div>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <div class="col-6">
+        <h3>핵심문구 빈도</h3>
+        <div class="row">
+          <div class="pill" style="min-width:220px">
+            고당도
+            <div class="bar" style="margin-top:6px"><i style="width:100%"></i></div>
+          </div>
+          <div class="pill" style="min-width:220px">
+            신선배송
+            <div class="bar" style="margin-top:6px"><i style="width:100%"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <h3>감성/생활장면 빈도</h3>
+        <div class="row">
+          <div class="pill" style="min-width:220px">
+            가족감성
+            <div class="bar" style="margin-top:6px"><i style="width:100%"></i></div>
+          </div>
+          <div class="pill" style="min-width:220px">
+            아이간식
+            <div class="bar" style="margin-top:6px"><i style="width:100%"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CTA 패턴 분석 -->
+  <section class="card">
+    <h2>3. CTA 패턴 분석</h2>
+    <p class="muted">관찰: 명시적 구매/전환 CTA가 부재. 당도·배송 강조만으로는 장바구니 전환까지 이어지기 어려움.</p>
+    <div class="grid">
+      <div class="col-6">
+        <h3>권장 CTA 세트 (상세페이지)</h3>
+        <ul>
+          <li>주요: 지금 수확분 주문하기 · 선물/가정용 선택</li>
+          <li>보조: 로트ID 조회하기 · 당도측정 보기(사진) · 크기/개수 가이드</li>
+          <li>긴급성: 오늘 마감 H-시간 · 새벽배송 가능 지역 확인</li>
+          <li>신뢰: GAP/무농약 인증서 보기 · 포장/냉장 상세 보기</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>권장 CTA 세트 (SNS/릴스 연계)</h3>
+        <ul>
+          <li>영상 고정 스티커: 상품 보러가기 · 오늘 수확 확인</li>
+          <li>캡션 맺음: 링크에서 등급/수확일 선택 · 재고 소진 시 자동 품절</li>
+          <li>스토리/하이라이트: 포장 언박싱 보기 · 아이간식 레시피 보기</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-sample">
+      마이크로카피 예: “현재 판매 중인 로트: 24-SSJ-0712 | 평균 11.8°Bx(농가 측정) · 상세 보기”
+    </div>
+  </section>
+
+  <!-- 4. 후킹 문장 패턴 -->
+  <section class="card">
+    <h2>4. 후킹 문장 패턴</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>관찰된 패턴</h3>
+        <ul>
+          <li>첫 3초에 당도/맛 숫자·체감 표현 제시</li>
+          <li>집까지 신선 배송 → 편의/안전 강조</li>
+          <li>가족/아이 맥락으로 섭취 장면 구체화</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>참외 전이 적용 공식</h3>
+        <ul>
+          <li>[수확일/당도 수치] + [생활맥락] + [행동유도]</li>
+          <li>예) “오늘 수확 11~12°Bx, 아이간식으로 아삭하게. 지금 로트 확인하기”</li>
+          <li>과장 회피: “최고” 대신 “이번 로트 평균/범위” 표현 권장</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="pill">“아삭함 먼저, 달콤함은 오래”</div>
+      <div class="pill">“마트행 생략, 오늘 수확분 도착”</div>
+      <div class="pill">“껍질 벗기고 한입, 아이간식 끝”</div>
+      <div class="pill">“로트별 당도 공개, 믿고 고르는 참외”</div>
+    </div>
+  </section>
+
+  <!-- 5. 참외 판매 키워드 분석 -->
+  <section class="card">
+    <h2>5. 참외 판매 키워드 분석</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>핵심 키워드</h3>
+        <div>
+          <span class="tag">고당도</span>
+          <span class="tag">아삭식감</span>
+          <span class="tag">신선배송</span>
+          <span class="tag">산지직송</span>
+          <span class="tag">아이간식</span>
+          <span class="tag">여름제철</span>
+          <span class="tag">성주참외</span>
+          <span class="tag">GAP/인증</span>
+          <span class="tag">당일수확</span>
+          <span class="tag">선물세트</span>
+          <span class="tag">등급/크기선별</span>
+          <span class="tag">냉장포장</span>
+          <span class="tag">이력추적</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <h3>롱테일/조합 키워드</h3>
+        <ul>
+          <li>성주 참외 5kg 선물세트 | 로트ID 조회 가능</li>
+          <li>참외 당도 11~12°Bx(농가 측정) | 당일 수확 출하</li>
+          <li>아이간식 과일 추천 | 손질 간편 참외</li>
+          <li>GAP 인증 산지직송 | 냉장포장 새벽배송</li>
+          <li>참외 보관법/숙성 | 씨 적은 편/과육 아삭</li>
+        </ul>
+        <div class="mini">주의: 키워드에 수치 포함 시 실제 측정치·측정일·측정방법(굴절당도계)을 함께 제시.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 상세페이지 반영 전략 -->
+  <section class="card">
+    <h2>6. 상세페이지 반영 전략</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>HERO 영역 구성</h3>
+        <ul>
+          <li>타이틀: “오늘 수확, 아삭한 성주 참외”</li>
+          <li>서브: “로트 <span class="hl">24-SSJ-0712</span> | 평균 <span class="hl">11.8°Bx</span> (농가 측정, 로트별 상이) · 냉장포장 당일출하”</li>
+          <li>근거요소: 굴절당도계 사진, 선별/등급표, 포장 사진, 수확일 스탬프</li>
+          <li>선택: 가정용/선물용 · 중/대 사이즈 · 중량/개수 옵션</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>본문 섹션 설계</h3>
+        <ul>
+          <li>왜 맛있는가: 재배지/품종/일조량/수분 관리 스토리</li>
+          <li>등급·크기 가이드: 규격(2L/L/M), 평균 개수/박스</li>
+          <li>포장/배송: 완충재-아이스팩-박스 구조, 출고 마감/도착 SLA</li>
+          <li>보관/손질: 세척·껍질 제거·보관 온도·유통기한 권장</li>
+          <li>이력추적: 로트ID·수확일·작업장·검수자</li>
+          <li>FAQ/환불: 파손/신선도 이슈 처리 기준(사진 증빙·접수 기한)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-sample">
+      HERO 문구 예시: “성주 로트 24-SSJ-0712 | 평균 11.8°Bx(농가 측정) · 오늘 수확 · 냉장포장 당일출하”
+    </div>
+  </section>
+
+  <!-- 7. 썸네일/대표이미지 반영 전략 -->
+  <section class="card">
+    <h2>7. 썸네일/대표이미지 반영 전략</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>디자인 원칙</h3>
+        <ul>
+          <li>2줄 원칙: 숫자/사실 → 이유/증빙 순</li>
+          <li>텍스트 대비: 노란 배경의 참외 위에 짙은 녹색 텍스트</li>
+          <li>증빙 아이콘: 굴절당도계·로트ID·냉장포장 스탬프</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>권장 문구(오버레이)</h3>
+        <ul>
+          <li>“오늘 수확 | 11~12°Bx(농가 측정)”</li>
+          <li>“아삭함 먼저, 달콤함 오래 | 냉장포장 당일출하”</li>
+          <li>“아이간식으로 딱 | 씨 적고 손질 간편”</li>
+          <li>“성주 로트 공개 | 이력추적 가능”</li>
+          <li>“선물용/가정용 선택 | 등급·크기 명확”</li>
+          <li>“새벽배송 지역 확인 | 마감 H-시간”</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ONEFLOW 적용 가이드 -->
+  <section class="card">
+    <h2>8. ONEFLOW 적용 가이드</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>데이터 매핑(필드 스키마)</h3>
+        <ul>
+          <li>농가명/재배지/품종</li>
+          <li>수확일·출하일·로트ID</li>
+          <li>당도 평균/범위/측정일/측정방법(사진 URL)</li>
+          <li>등급/크기/평균 개수·중량</li>
+          <li>포장타입(완충/아이스팩/박스)·콜드체인</li>
+          <li>인증(GAP/무농약 등)·문서 URL</li>
+          <li>배송 마감시간·SLA·권역</li>
+          <li>재고/예약수확 수량·리드타임</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>자동화/검증</h3>
+        <ul>
+          <li>HERO 자동 생성: “로트 {ID} | 평균 {Brix}°Bx(농가 측정) · {수확일} 수확”</li>
+          <li>배지 트리거: Brix≥11 → “고당도” 배지, 인증서 업로드 → “GAP 인증” 배지</li>
+          <li>콘텐츠 가드레일: 수치 표기 시 측정사진 필수 업로드 검증</li>
+          <li>마감 카운트다운: 지역/시간대별 커틀오프 자동 표시</li>
+          <li>릴스 UTM/로트 연동: 유입↔구매 전환 추적</li>
+        </ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="mini">A/B 테스트 제안: A안(수치 중심) vs B안(생활맥락 중심) HERO. KPI: PDP 클릭률, 장바구니 추가율, 구매전환율.</div>
+  </section>
+
+  <!-- 9. 바로 사용할 수 있는 문구 예시 -->
+  <section class="card">
+    <h2>9. 바로 사용할 수 있는 문구 예시</h2>
+    <div class="grid">
+      <div class="col-6">
+        <h3>HERO/상단 타이틀</h3>
+        <ul>
+          <li>오늘 수확, 아삭한 성주 참외</li>
+          <li>로트 24-SSJ-0712 | 평균 11.8°Bx(농가 측정)</li>
+          <li>가정용/선물용 선택, 냉장포장 당일출하</li>
+          <li>아이간식으로 부담 없이, 씨 적고 손질 간편</li>
+          <li>이력추적 가능한 산지직송 참외</li>
+        </ul>
+        <h3>서브카피</h3>
+        <ul>
+          <li>이번 로트의 당도·크기·수확일을 투명하게 공개합니다.</li>
+          <li>완충 포장과 아이스팩으로 신선하게 도착합니다.</li>
+          <li>등급별 크기/개수 가이드를 확인하고 선택하세요.</li>
+          <li>사진으로 보는 당도 측정값(굴절당도계)</li>
+          <li>배송 마감 전 주문 시 내일 새벽 수령 가능(권역별 상이)</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h3>썸네일/대표이미지</h3>
+        <ul>
+          <li>오늘 수확 | 11~12°Bx 공개</li>
+          <li>아삭함 먼저, 달콤함 오래</li>
+          <li>성주 로트 공개 | 이력추적 가능</li>
+          <li>선물용 포장 선택 가능</li>
+          <li>새벽배송 권역 확인</li>
+        </ul>
+        <h3>릴스 후킹(첫 3초)</h3>
+        <ul>
+          <li>“오늘 수확한 참외, 당도부터 확인해요”</li>
+          <li>“아이 간식? 껍질 벗기고 한입이면 끝”</li>
+          <li>“로트별 당도 공개, 골라 담는 재미”</li>
+          <li>“냉장포장으로 신선하게 도착합니다”</li>
+          <li>“성주에서 오늘 나온 그 맛”</li>
+        </ul>
+        <h3>CTA 마이크로카피</h3>
+        <ul>
+          <li>지금 수확분 주문하기</li>
+          <li>로트ID·당도 보기</li>
+          <li>등급/크기 선택하기</li>
+          <li>선물용 포장 추가</li>
+          <li>새벽배송 가능지역 확인</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:8px">
+      실제 운영 시 “평균 11.8°Bx(농가 측정, 로트별 상이)”처럼 출처·방법·날짜를 병기해 수치 주장의 신뢰도를 확보하세요.
+    </div>
+  </section>
+
+  <!-- 10. 결론 -->
+  <section class="card">
+    <h2>10. 결론</h2>
+    <ul>
+      <li>핵심: 첫 3초에 “당도·수확일·신선배송”을 사실 기반으로 제시하고, 가족/아이 맥락을 생활장면으로 연결.</li>
+      <li>즉시 실행(7일 내):
+        <ul>
+          <li>농가 측정 프로토콜 정립: 굴절당도계 사진+수확일 스탬프 의무화</li>
+          <li>ONEFLOW 스키마 적용: 로트ID/당도/등급/포장/마감시간 필드 세팅 및 HERO 자동생성</li>
+          <li>PDP 개편: HERO·이력추적·포장/배송·보관/FAQ 섹션 배치</li>
+          <li>썸네일 교체: 2줄 오버레이(수치→근거) 세트 롤아웃</li>
+          <li>릴스 2종 제작: A안(수치 중심)·B안(생활맥락), UTM+로트 연동</li>
+          <li>CTA 삽입: “지금 수확분 주문하기/로트ID 조회/등급 선택” 고정 배치</li>
+        </ul>
+      </li>
+      <li>리스크 관리: 과장 표현 회피, 수치·인증·배송 조건을 실제 데이터와 일치시키고 변동 가능성을 고지.</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    참고: 본 리포트는 ‘참외’ 검색 기반 수집이나 원본 캡션이 ‘적포도’로 보이는 중복 데이터(3건)를 포함합니다. 패턴은 판매문법에 한해 적용했으며, 수치/품종 정보는 실제 농가 데이터로 대체해 사용하십시오.
+  </div>
+</div>
+</body>
+</html>
