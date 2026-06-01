@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONEFLOW 리포트 | 인스타그램 참외 판매문법·상세페이지 전략</title>
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --ink:#1f2937;
+    --sub:#6b7280;
+    --primary:#0ea5a4;
+    --accent:#f2b705;
+    --ok:#059669;
+    --warn:#d97706;
+    --danger:#dc2626;
+    --line:#e5e7eb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family: "Pretendard",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Apple SD Gothic Neo,맑은 고딕,"Malgun Gothic","Noto Sans KR",sans-serif;
+    line-height:1.5;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 60px;}
+  header{
+    background:linear-gradient(120deg,#ffef9f 0%,#ffe27a 30%,#b8e1a3 85%);
+    border-radius:18px;
+    padding:28px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  header h1{
+    margin:0 0 6px;
+    font-size:26px;
+    letter-spacing:-0.3px;
+  }
+  header p{
+    margin:0;
+    color:#374151;
+  }
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 10px;border-radius:999px;background:#fff;color:#374151;border:1px solid rgba(0,0,0,.06);
+    font-size:12px;margin-right:6px;margin-top:10px;
+  }
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px;}
+  .kpi{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+  }
+  .kpi .label{color:var(--sub);font-size:12px;}
+  .kpi .val{font-size:22px;font-weight:700;margin-top:4px;}
+  .section{margin-top:26px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;
+  }
+  h2{
+    font-size:20px;margin:0 0 12px;padding-left:6px;border-left:4px solid var(--primary);
+  }
+  h3{font-size:16px;margin:14px 0 8px;color:#111827;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+  ul{margin:8px 0 0 18px;padding:0;}
+  li{margin:6px 0;}
+  .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#111827;font-size:12px;border:1px solid var(--line);margin:2px 4px 0 0;}
+  .badge.ok{background:#ecfdf5;color:#065f46;border-color:#d1fae5;}
+  .badge.warn{background:#fff7ed;color:#9a3412;border-color:#ffedd5;}
+  .badge.key{background:#fef9c3;color:#854d0e;border-color:#fde68a;}
+  .muted{color:var(--sub);}
+  .note{
+    background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 14px;color:#78350f;font-size:13px;margin-top:8px;
+  }
+  .bars{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+  .bar{background:#f3f4f6;border-radius:8px;overflow:hidden;border:1px solid var(--line);}
+  .bar > div{height:10px;background:linear-gradient(90deg,#0ea5a4,#22c55e);}
+  .bar-label{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin:2px 2px 0;}
+  .code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    background:#f3f4f6;border:1px dashed var(--line);border-radius:10px;padding:10px;color:#111827;font-size:13px;
+  }
+  .template{
+    background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:8px;
+  }
+  .template strong{color:#065f46;}
+  .cta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;}
+  .cta{
+    border:1px solid var(--line);background:#ffffff;border-radius:12px;padding:10px 12px;font-size:14px;
+  }
+  .hero-ex{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:14px;align-items:stretch;
+  }
+  .hero-card{border:1px solid var(--line);background:#ffffff;border-radius:14px;padding:14px;}
+  .small{font-size:12px;color:var(--sub);}
+  .checklist li{margin:8px 0;list-style:"✓ ";padding-left:4px;}
+  .warnlist li{list-style:"• ";color:#9a3412;}
+  .foot{margin-top:26px;color:var(--sub);font-size:12px;text-align:center;}
+  a{color:#0f766e;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ONEFLOW 인스타그램 참외 판매문법·상세페이지 전략 리포트</h1>
+      <p class="muted">조사일 2026-06-01 · 분석 대상: 인스타그램 릴스/게시물 (검색어: 참외)</p>
+      <div class="pill"><strong>목적</strong> 상세페이지·썸네일·릴스 후킹 문법 추출</div>
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="label">총 분석 건수</div>
+          <div class="val">1</div>
+        </div>
+        <div class="kpi">
+          <div class="label">CTA 집계</div>
+          <div class="val">0 <span class="badge warn">부족</span></div>
+        </div>
+        <div class="kpi">
+          <div class="label">핵심문구 집계</div>
+          <div class="val">고당도 · 신선배송</div>
+        </div>
+        <div class="kpi">
+          <div class="label">감성/생활장면</div>
+          <div class="val">가족감성 · 아이간식</div>
+        </div>
+      </div>
+      <div class="note">
+        데이터 불일치 주의: 본 분석의 원본 콘텐츠는 “적포도(스윗셀럽)”를 다루고 있으며, 검색어(참외)와 상이합니다. 본 리포트는 관찰된 판매문법(고당도·신선배송·가족/아이 문맥·첫 3초 당도 강조)을 ‘참외’에 적용 가능하도록 실무형으로 재가공했습니다.
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>1. Executive Summary</h2>
+      <div class="card">
+        <ul>
+          <li>관찰 포인트: 첫 3초에 당도·맛을 강렬히 제시, 가족/아이 간식 장면으로 생활 밀착, 신선배송을 신뢰 근거로 활용.</li>
+          <li>부족한 요소: CTA 부재로 전환 유도 약함. 이력추적·수확일·선별등급 등 데이터형 신뢰요소 미노출.</li>
+          <li>참외 적용 핵심: 고당도 근거는 “측정값·로트·수확일”로 객관화, 패키지·선별·배송 옵션을 명확화, 썸네일은 2줄 구조(고당도/신뢰·생활장면)로 단순·크게.</li>
+          <li>실행 우선순위
+            <ul>
+              <li>상세페이지 HERO에 “평균 당도[Brix]·수확일·로트번호·산지” 4요소 고정 노출</li>
+              <li>릴스 후킹 3초: 굴절당도계 → 단면 컷 → 아삭 소리 순</li>
+              <li>CTA 라이브러리 5종(예약수확·로트확인·선물포장·신선배송옵션·상담) 도입 및 A/B 테스트</li>
+              <li>아이간식 문맥: 손질/도시락/아침과일 활용컷 삽입</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. 데이터 개요</h2>
+      <div class="card">
+        <div class="grid-2">
+          <div>
+            <h3>집계 요약</h3>
+            <div class="bars">
+              <div class="bar-label"><span>첫3초: 당도·맛 강조형</span><span>1/1</span></div>
+              <div class="bar"><div style="width:100%"></div></div>
+              <div class="bar-label"><span>핵심문구: 고당도</span><span>1</span></div>
+              <div class="bar"><div style="width:100%"></div></div>
+              <div class="bar-label"><span>핵심문구: 신선배송</span><span>1</span></div>
+              <div class="bar"><div style="width:100%"></div></div>
+              <div class="bar-label"><span>감성: 가족/아이</span><span>1</span></div>
+              <div class="bar"><div style="width:100%"></div></div>
+            </div>
+          </div>
+          <div>
+            <h3>원본 콘텐츠 메모</h3>
+            <ul>
+              <li>계정: bl_.luv · 좋아요 360 · 댓글 145</li>
+              <li>핵심문구: 고당도, 신선배송</li>
+              <li>생활장면: 아이간식</li>
+              <li>해시태그/캡션은 포도(스윗셀럽, 20Brix)로 확인됨</li>
+            </ul>
+            <div class="note">
+              적용 방식: 표현 문법만 추출(고당도 강조, 배송 신뢰, 가족 문맥) → 참외 품목 특성(아삭 식감, 향, 수확·선별·포장)으로 치환 제안.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>3. CTA 패턴 분석</h2>
+      <div class="card">
+        <div class="grid-2">
+          <div>
+            <h3>관찰</h3>
+            <ul>
+              <li>명시적 CTA 부재: 조회·저장은 가능하나 구매 전환 유도 문장이 없음</li>
+              <li>신뢰·생활 문맥이 존재하여 CTA 연결시 전환 개선 여지 큼</li>
+            </ul>
+            <h3>리스크</h3>
+            <ul class="warnlist">
+              <li>구매/상담 경로 불명확 → 이탈</li>
+              <li>산지·로트 정보 미제공 → 신뢰 형성 지연</li>
+            </ul>
+          </div>
+          <div>
+            <h3>추천 CTA 프레임(참외용)</h3>
+            <div class="cta-grid">
+              <div class="cta"><strong>오늘 수확 예약</strong><br><span class="small">D+1 산지직송·수량 한정</span></div>
+              <div class="cta"><strong>로트 확인 후 구매</strong><br><span class="small">LOT #[로트]·평균 [Brix]</span></div>
+              <div class="cta"><strong>선물포장 선택</strong><br><span class="small">카드 동봉·배송일 지정</span></div>
+              <div class="cta"><strong>신선배송 옵션</strong><br><span class="small">기본/쿨배송 선택</span></div>
+              <div class="cta"><strong>농가 톡상담</strong><br><span class="small">크기/당도 문의</span></div>
+            </div>
+            <div class="small muted" style="margin-top:8px;">채널 연결: 프로필 링크(ONEFLOW 상품), DM 자동응답, 카카오/네이버 톡상담 버튼 병행</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. 후킹 문장 패턴</h2>
+      <div class="card">
+        <div class="grid-3">
+          <div>
+            <h3>숫자·증거 제시형</h3>
+            <ul>
+              <li>“오늘 수확 LOT #[로트], 평균 [Brix] 내외 확인!”</li>
+              <li>“단면에서 바로 느껴지는 아삭함, 계측값은 [Brix]”</li>
+            </ul>
+          </div>
+          <div>
+            <h3>질문·문제해결형</h3>
+            <ul>
+              <li>“아이 간식, 달달하지만 깔끔한 과일 찾으세요?”</li>
+              <li>“물렁한 참외 말고, 아삭한 것만 골라 보내드립니다.”</li>
+            </ul>
+          </div>
+          <div>
+            <h3>생활 장면 투영형</h3>
+            <ul>
+              <li>“도시락 시간에 딱, 손질 1분 참외”</li>
+              <li>“주말 브런치에 한 접시의 여유”</li>
+            </ul>
+          </div>
+        </div>
+        <h3>첫 3초 모션/컷 보드</h3>
+        <ul>
+          <li>장면1(0–1s): 굴절당도계 근접 촬영 → 화면 텍스트 “평균 [Brix] 내외”</li>
+          <li>장면2(1–2s): 단면 컷 + 씨 제거 컷 → “아삭·향긋” 타이포</li>
+          <li>장면3(2–3s): 아이 한 입 씩 담긴 도시락 → “아이간식 OK”</li>
+        </ul>
+        <div class="small muted">표현은 수치·로트·수확일 등 근거와 함께 사용(개별 과일 편차 안내 필수).</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>5. 참외 판매 키워드 분석</h2>
+      <div class="card">
+        <div class="grid-2">
+          <div>
+            <h3>데이터에서 추출</h3>
+            <span class="badge key">고당도</span>
+            <span class="badge key">신선배송</span>
+            <span class="badge">가족감성</span>
+            <span class="badge">아이간식</span>
+            <span class="badge">첫3초 당도강조</span>
+          </div>
+          <div>
+            <h3>ONEFLOW 추천 확장 키워드(보완)</h3>
+            <span class="badge">아삭 식감</span>
+            <span class="badge">수확일 표기</span>
+            <span class="badge">로트/이력번호</span>
+            <span class="badge">등급·규격(소/중/대과)</span>
+            <span class="badge">선별 기준(외관/중량/당도)</span>
+            <span class="badge">포장(완충/통기)</span>
+            <span class="badge">배송옵션(일반/쿨)</span>
+            <span class="badge">선물포장</span>
+          </div>
+        </div>
+        <div class="note">과장 표현 대신, 측정 기준·로트 정보·편차 안내를 병기하여 신뢰를 강화합니다.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>6. 상세페이지 반영 전략</h2>
+      <div class="card">
+        <div class="hero-ex">
+          <div class="hero-card">
+            <h3>Hero 상단(첫 화면) 구성</h3>
+            <ul class="checklist">
+              <li>헤드라인: “오늘 수확 참외, 평균 [Brix] 내외”</li>
+              <li>핵심 배지: 산지/품종 · 수확일 · 로트번호 · 규격/등급</li>
+              <li>신뢰 스택: 굴절당도계 사진, 선별 테이블, 포장 사진 3종</li>
+              <li>빠른 옵션: 규격(소/중/대), 포장(일반/선물), 배송(일반/쿨)</li>
+              <li>CTA: “로트 확인 후 구매”, “오늘 수확 예약” 2버튼</li>
+            </ul>
+          </div>
+          <div class="hero-card">
+            <h3>데이터 블록(가능하면 자동 반영)</h3>
+            <div class="template">
+              <strong>로트:</strong> #[로트번호]<br>
+              <strong>수확일:</strong> [YYYY-MM-DD] (수확 후 [시간] 내 포장)<br>
+              <strong>평균 당도:</strong> [Brix] (n=[샘플수], 굴절당도계 [기기모델], 20℃ 기준)<br>
+              <strong>규격/등급:</strong> [중과/대과], [특/상/보통]<br>
+              <strong>이력번호:</strong> [번호], GAP 여부: [예/아니오]
+            </div>
+          </div>
+        </div>
+        <h3>중단 섹션</h3>
+        <ul>
+          <li>맛/식감 설명: “아삭한 식감, 꿀향, 물리지 않는 단맛” + 단면/식감 영상</li>
+          <li>선별 기준 인포: 흠집 허용범위, 크기 범위, 가용 오차(±g)</li>
+          <li>포장·배송: 통기성 완충, 여름철 쿨배송 가이드, 파손/과숙 대응 기준</li>
+          <li>사용 시나리오: 아이 도시락, 간식, 샐러드, 선물</li>
+          <li>FAQ: 당도 편차, 보관법(상온/냉장), 교환 기준</li>
+        </ul>
+        <h3>주의/표기</h3>
+        <ul class="warnlist">
+          <li>개별 과일 간 당도·크기 편차 존재 고지</li>
+          <li>표시 당도는 측정 샘플 평균이며 제시된 조건(온도/숙성) 설명</li>
+          <li>후숙 과일 아님 명시, 보관·섭취 안내</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>7. 썸네일/대표이미지 반영 전략</h2>
+      <div class="card">
+        <h3>구성 원칙</h3>
+        <ul>
+          <li>2줄 구조: 1줄(고당도/수확일) + 1줄(신뢰·생활 키워드)</li>
+          <li>숫자·로트·수확일을 큰 타이포로, 생활 키워드는 보조</li>
+          <li>근거 사진: 굴절당도계 수치·단면·포장 중 1개와 조합</li>
+        </ul>
+        <h3>문구 조합 예</h3>
+        <div class="grid-auto">
+          <div class="template"><strong>오늘 수확</strong><br>평균 [Brix] 내외</div>
+          <div class="template"><strong>산지직송 D+1</strong><br>LOT #[로트] 확인 가능</div>
+          <div class="template"><strong>아삭 참외</strong><br>아이간식/도시락 좋음</div>
+          <div class="template"><strong>선물 준비</strong><br>선물포장·메시지 카드</div>
+          <div class="template"><strong>등급 선별</strong><br>[등급]/[규격] 옵션</div>
+          <div class="template"><strong>신선배송</strong><br>완충/통기 포장</div>
+        </div>
+        <div class="small muted" style="margin-top:8px;">권장 글자수: 각 줄 7–12자, 대비 높은 컬러(짙은 녹/먹)와 연노랑 배경 권장.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>8. ONEFLOW 적용 가이드</h2>
+      <div class="card">
+        <div class="grid-2">
+          <div>
+            <h3>데이터 스키마(필드)</h3>
+            <ul>
+              <li>산지/품종, 수확일, 로트번호(LOT), 이력번호</li>
+              <li>평균 당도(Brix), 샘플수, 측정기기, 측정온도</li>
+              <li>규격/등급, 중량/과수, 허용 오차</li>
+              <li>포장(완충/통기/선물), 배송옵션(일반/쿨)</li>
+              <li>사진/영상: 단면, 당도계, 선별·포장, 라이프스타일</li>
+            </ul>
+            <h3>자동 생성</h3>
+            <ul>
+              <li>HERO 헤드라인 = “오늘 수확 [산지] 참외, 평균 [Brix]”</li>
+              <li>배지 = [수확일]/LOT/[등급·규격]/이력번호</li>
+              <li>썸네일 2줄 = [당도/수확일] + [신뢰/생활]</li>
+            </ul>
+          </div>
+          <div>
+            <h3>A/B 테스트</h3>
+            <ul>
+              <li>CTA: “오늘 수확 예약” vs “로트 확인 후 구매”</li>
+              <li>HERO 수치: [Brix] 노출 vs 비노출</li>
+              <li>생활 장면: 아이간식 vs 브런치 컷</li>
+            </ul>
+            <h3>컴플라이언스</h3>
+            <ul>
+              <li>과장·확정적 표현 지양(“보장” → “내외/경우가 있습니다”)</li>
+              <li>측정 기준·편차·보관 안내 병기</li>
+              <li>협찬/광고 표기 기준 준수</li>
+            </ul>
+          </div>
+        </div>
+        <h3>운영 팁</h3>
+        <ul>
+          <li>로트별 상세페이지 분기: 재고 소진 시 자동 비활성화</li>
+          <li>수확 스케줄 기반 배송 달력: 출고 마감시간 표시</li>
+          <li>리뷰 유도: “당도계 사진 포함 리뷰 추가 적립”</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>9. 바로 사용할 수 있는 문구 예시</h2>
+      <div class="card">
+        <div class="grid-3">
+          <div>
+            <h3>상세페이지 HERO</h3>
+            <ul>
+              <li>“오늘 수확 참외, 평균 [Brix] 내외｜LOT #[로트] 공개”</li>
+              <li>“아삭함이 살아있는 [산지] 참외, 수확일 [MM/DD]”</li>
+              <li>“가족이 편하게 먹는 단맛, 등급 [특/상]·[중/대과] 선별”</li>
+              <li>“산지직송 D+1, 포장부터 다릅니다(완충·통기)”</li>
+              <li>“선물하기 좋은 노란 아삭함, 메시지 카드 동봉”</li>
+            </ul>
+          </div>
+          <div>
+            <h3>썸네일 2줄</h3>
+            <ul>
+              <li>오늘 수확 / 평균 [Brix] 내외</li>
+              <li>산지직송 / LOT #[로트] 확인</li>
+              <li>아삭 참외 / 아이간식 좋아요</li>
+              <li>등급 선별 / [규격] 옵션</li>
+              <li>신선배송 / 완충 포장</li>
+            </ul>
+          </div>
+          <div>
+            <h3>릴스 후킹(3초)</h3>
+            <ul>
+              <li>“이 수치, 오늘 로트의 답입니다 → [Brix]”</li>
+              <li>“단면만 봐도 아삭한 이유”</li>
+              <li>“아이 도시락, 1분 컷 참외”</li>
+              <li>“수확 직후 포장, 내일 도착”</li>
+              <li>“씨 제거 팁: 깔끔하게 즐기세요”</li>
+            </ul>
+          </div>
+        </div>
+        <h3>CTA 문구</h3>
+        <div class="grid-auto">
+          <div class="template">오늘 수확 예약</div>
+          <div class="template">LOT #[로트] 확인 후 구매</div>
+          <div class="template">선물포장 선택</div>
+          <div class="template">쿨배송 옵션 추가</div>
+          <div class="template">크기/당도 상담</div>
+          <div class="template">수확일 지정 문의</div>
+          <div class="template">재입고 알림 받기</div>
+          <div class="template">리뷰 혜택 확인</div>
+        </div>
+        <h3>미세 카피(신뢰/정책)</h3>
+        <div class="code">
+          - 평균 당도는 표본 측정값으로 개별 과일에 따라 차이가 있을 수 있습니다.<br>
+          - 굴절당도계 [모델명], 20℃ 기준으로 측정했습니다.<br>
+          - 여름철은 쿨배송(유상옵션)을 권장드립니다.<br>
+          - 파손/과숙 수령 시 사진과 함께 접수해 주세요. 신속히 도와드리겠습니다.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>10. 결론</h2>
+      <div class="card">
+        <ul>
+          <li>소량 데이터(n=1)이나, 첫 3초 당도 강조·가족/아이 문맥·신선배송의 판매문법은 참외에도 유효합니다.</li>
+          <li>핵심은 “근거 제시”입니다. 수확일·로트·평균 당도·선별/포장 기준을 HERO와 썸네일에서 즉시 보여주면 전환 효율이 높아집니다.</li>
+          <li>CTA 라이브러리를 도입하고, 로트 기반 정보 공개로 신뢰를 선제적으로 확보하세요.</li>
+        </ul>
+        <div class="note">데이터 불일치(포도 콘텐츠)로 인한 편향 가능성을 고려해, 운영 초기에는 A/B 테스트로 문구·구성의 효과를 검증하시길 권장드립니다.</div>
+      </div>
+    </section>
+
+    <div class="foot">
+      ONEFLOW · 농가와 고객을 연결하는 데이터 기반 유통 플랫폼
+    </div>
+  </div>
+</body>
+</html>
