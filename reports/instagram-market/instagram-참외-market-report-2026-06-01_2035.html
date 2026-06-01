@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONEFLOW 참외 인스타그램 판매문법·상세페이지 전략 리포트</title>
+<style>
+  :root{
+    --bg:#0f1220;
+    --panel:#171a2b;
+    --panel2:#1d2140;
+    --accent:#7bd389;
+    --accent2:#8aa2ff;
+    --muted:#aab2ce;
+    --text:#eef1ff;
+    --warn:#ffb86b;
+    --danger:#ff7a7a;
+    --good:#7be0b8;
+    --bad:#ff9aa2;
+    --chip:#242949;
+    --line:#2a2f55;
+    --shadow: 0 12px 30px rgba(0,0,0,.35);
+    --radius:14px;
+    --radius-sm:10px;
+    --radius-lg:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:linear-gradient(180deg,#0e1020,#121533 35%,#0f1220 100%);
+    color:var(--text); font-family: Pretendard, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, "Noto Sans KR", Apple SD Gothic Neo, "Malgun Gothic", sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.6;
+  }
+  .wrap{max-width:1120px; margin:32px auto 96px; padding:0 20px}
+  header{
+    background:linear-gradient(135deg, rgba(138,162,255,.18), rgba(123,211,137,.16));
+    border:1px solid var(--line); border-radius:var(--radius-lg); padding:28px 26px; box-shadow:var(--shadow);
+    position:relative; overflow:hidden;
+  }
+  header:after{
+    content:""; position:absolute; right:-80px; top:-80px; width:220px; height:220px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(138,162,255,.35), rgba(138,162,255,0) 60%);
+    filter:blur(2px);
+  }
+  .title{display:flex; align-items:flex-start; gap:16px}
+  .logo{
+    width:46px; height:46px; border-radius:12px; background:linear-gradient(135deg,#8aa2ff,#7bd389);
+    display:flex; align-items:center; justify-content:center; color:#0b0f1a; font-weight:800; box-shadow:0 6px 18px rgba(138,162,255,.25);
+  }
+  h1{margin:0; font-size:22px; letter-spacing:.2px}
+  .subtitle{margin:6px 0 0; color:var(--muted); font-size:14px}
+  .meta{display:flex; gap:12px; margin-top:14px; flex-wrap:wrap}
+  .tag{
+    display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid var(--line);
+    color:#cfd6ff; padding:6px 10px; border-radius:999px; font-size:12px;
+  }
+  .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px; margin-top:22px}
+  .card{
+    background:linear-gradient(180deg, var(--panel), var(--panel2));
+    border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); position:relative;
+  }
+  .card h2{margin:0 0 10px; font-size:18px}
+  .card h3{margin:16px 0 8px; font-size:15px; color:#dfe4ff}
+  .kpi{display:flex; gap:12px; margin-top:8px; flex-wrap:wrap}
+  .kpi .item{
+    background:var(--chip); border:1px solid var(--line); padding:10px 12px; border-radius:10px; min-width:120px;
+  }
+  .kpi .num{font-weight:800; font-size:18px}
+  .pill{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; background:#1d2246; border:1px solid #2b3162; color:#e7ebff; font-size:13px; margin:4px 6px 0 0}
+  .warn{background:rgba(255,186,107,.1); border:1px dashed rgba(255,186,107,.5); color:#ffd9a6}
+  .danger{background:rgba(255,122,122,.1); border:1px dashed rgba(255,122,122,.55); color:#ffb1b1}
+  .ok{background:rgba(123,208,184,.12); border:1px dashed rgba(123,208,184,.55); color:#a9f0d5}
+  .list{margin:8px 0 0; padding-left:16px}
+  .list li{margin:6px 0}
+  .small{color:var(--muted); font-size:12px}
+  .code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#121635; border:1px solid #2a2f55; padding:2px 6px; border-radius:6px; color:#cfe0ff}
+  a{color:#a8b8ff; text-decoration:none}
+  a:hover{text-decoration:underline}
+  .cols-6{grid-column: span 6}
+  .cols-12{grid-column: span 12}
+  .cols-4{grid-column: span 4}
+  .cols-8{grid-column: span 8}
+  .foot{margin-top:26px; color:var(--muted); font-size:12px}
+  .hr{height:1px; background:linear-gradient(90deg, transparent, #2a2f55, transparent); margin:12px 0}
+  .badge{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:8px; border:1px solid #334; background:#1a1f3a; color:#cfe0ff; font-size:12px}
+  .ideas{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+  .step{counter-increment: step; position:relative; padding-left:36px; margin:10px 0}
+  .step:before{
+    content: counter(step); position:absolute; left:0; top:2px; width:24px; height:24px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; font-weight:800; background:linear-gradient(135deg,#8aa2ff,#7bd389); color:#0b0f1a; box-shadow:0 4px 14px rgba(138,162,255,.25);
+  }
+  .grid.kv .card{padding:16px}
+  .kv .k{color:#a8b8ff; font-size:12px}
+  .kv .v{font-weight:700; font-size:15px}
+  .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+  .cta-btn{display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid #333a77; background:linear-gradient(180deg,#202757,#1a1f3a); color:#e7ebff; margin:6px 6px 0 0; font-weight:600}
+  .tick{color:#7be0b8}
+  .x{color:#ff9aa2}
+  @media (max-width:980px){
+    .cols-6,.cols-4,.cols-8{grid-column:span 12}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="title">
+      <div class="logo">OF</div>
+      <div>
+        <h1>ONEFLOW 참외 인스타그램 판매문법·상세페이지 전략 리포트</h1>
+        <div class="subtitle">분석 목적: 인스타 콘텐츠 자체 운영이 아닌, 참외 판매문법·상세페이지 HERO/썸네일/릴스 후킹 문구 추출</div>
+        <div class="meta">
+          <span class="tag">검색어: 참외</span>
+          <span class="tag">조사일: 2026-06-01</span>
+          <span class="tag">총 분석 건수: 2</span>
+          <span class="tag">데이터 출처: 인스타그램 공개 포스트</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="grid">
+    <div class="card cols-12">
+      <h2>1. Executive Summary</h2>
+      <div class="ideas">
+        <span class="badge">핵심 패턴: 고당도(2)·신선배송(2)</span>
+        <span class="badge">감성: 가족감성(2)·아이간식(2)</span>
+        <span class="badge">첫 3초: 당도·맛 강조형(2)</span>
+      </div>
+      <div class="hr"></div>
+      <ul class="list">
+        <li>관찰 요약: 짧은 샘플이나 일관된 패턴은 존재. 당도 수치·맛 묘사로 시작하고, 집에서 안전하게 받는 신선배송을 강조. 가족·아이간식 장면을 붙여 사용 맥락을 명확히 함.</li>
+        <li>판매문법 시사점: 참외 상세페이지와 썸네일에서는 수확일·평균 당도(측정치)·완충 포장·새벽/신선배송 SLA·아이간식 활용 컷을 앞단에서 검증 가능한 데이터와 함께 제시.</li>
+        <li>CTA 공백: CTA 집계값이 없어 전환 유도 문구가 약함. ONEFLOW에서는 출하 일정 기반 “다음 수확분 예약”, “오늘 오후 2시 전 주문 시 내일 도착(지역별)” 등 실무형 CTA를 기본 탑재 권장.</li>
+        <li class="danger pill">데이터 불일치 주의: ‘참외’ 검색으로 수집되었으나 원본 캡션·해시태그는 적포도 콘텐츠. 패턴은 판매문법 레벨에서 전이 가능하나, ‘참외’에 직접 대입 전 교차검증 필요.</li>
+      </ul>
+    </div>
+
+    <div class="card cols-6">
+      <h2>2. 데이터 개요</h2>
+      <div class="kpi">
+        <div class="item">
+          <div class="num">2</div>
+          <div class="small">수집 건수</div>
+        </div>
+        <div class="item">
+          <div class="num">0</div>
+          <div class="small">CTA 확인</div>
+        </div>
+        <div class="item">
+          <div class="num">360 / 145</div>
+          <div class="small">최대 좋아요 / 댓글</div>
+        </div>
+      </div>
+      <h3>핵심 키워드 집계</h3>
+      <div class="ideas">
+        <span class="pill">고당도 x2</span>
+        <span class="pill">신선배송 x2</span>
+        <span class="pill">가족감성 x2</span>
+        <span class="pill">아이간식 x2</span>
+        <span class="pill">첫 3초: 당도·맛 x2</span>
+      </div>
+    </div>
+
+    <div class="card cols-6">
+      <h2>데이터 품질 노트</h2>
+      <ul class="list">
+        <li class="warn">검색어: 참외 / 원본 캡션·해시태그: 적포도 관련 (#돌쇠네적포도 등) → 주제 불일치 가능성.</li>
+        <li class="warn">2건 모두 동일 URL로 보이며, 중복 수집 가능성 존재.</li>
+        <li>조치: 패턴은 “과일” 공통 판매문법으로 해석하되, 참외에 적용 시 당도·산지·등급·포장 기준을 참외 실데이터로 치환해 사용.</li>
+      </ul>
+      <div class="small">원본 링크: <a href="https://www.instagram.com/bl_.luv/p/DYQYyyrkruT/" target="_blank" rel="noopener">instagram.com/bl_.luv/p/DYQYyyrkruT/</a></div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>3. CTA 패턴 분석</h2>
+      <div class="pill x">관찰 CTA: 없음</div>
+      <h3>보완 권고(참외 전환형 CTA 프레임)</h3>
+      <ul class="list">
+        <li><span class="tick">•</span> 재고·출하 기반: “이번 수확분 예약”, “마감 임박: {출하일} 출하”</li>
+        <li><span class="tick">•</span> 배송 약속 기반: “오늘 {주문마감시각} 이전 결제 시 {도착가능일} 도착(지역별 상이)”</li>
+        <li><span class="tick">•</span> 선택지 기반: “가정용/선물용 선택”, “크기 선택(특/대/중)”</li>
+        <li><span class="tick">•</span> 사전 알림: “다음 출하 알림 받기(재고 소진 시)”</li>
+        <li><span class="tick">•</span> 상담형: “단체·선물세트 문의(견적 안내)”</li>
+      </ul>
+      <div class="small">표현 유의: 과도한 한정·급박 표현은 지양. 실제 출하·재고·SLA 데이터 연동 시 자동 노출 권장.</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>4. 후킹 문장 패턴</h2>
+      <ul class="list">
+        <li>숫자 선도: “평균 {평균당도}°Bx, 오늘 수확한 참외 먼저 자를게요.”</li>
+        <li>생활장면 직결: “아이 간식, 껍질째 허용될까? 세척부터 확인해요.”</li>
+        <li>문제-해결: “마트까지 덥게 가지 말고, 산지에서 바로 오는 참외로 바꿔보세요.”</li>
+        <li>신뢰 컷: “굴절계로 바로 측정합니다: {실측당도}°Bx(개체차 있음).”</li>
+        <li>신선배송 안심: “완충+보냉 포장으로 눌림 최소화한 패킹 보여드릴게요.”</li>
+      </ul>
+      <div class="small">관찰 기반: ‘당도·맛 강조형 도입’이 반복적으로 확인됨.</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>5. 참외 판매 키워드 분석</h2>
+      <div class="ideas">
+        <span class="pill">핵심: 고당도</span>
+        <span class="pill">핵심: 신선배송</span>
+        <span class="pill">감성: 가족·아이간식</span>
+        <span class="pill">도입: 맛·당도 수치</span>
+      </div>
+      <h3>도메인 보강(제안 키워드, 데이터 필요)</h3>
+      <ul class="list">
+        <li>산지·품종: 성주/제주 등 산지 표기, 품종명 병기</li>
+        <li>선별: 크기·중량 등급, 흠과/가정용 옵션 명시</li>
+        <li>품질 데이터: 평균·분포 당도, 수확·출하일, LOT/이력추적</li>
+        <li>포장: 완충 방식, 보냉자재, 테스트 운송 결과</li>
+      </ul>
+      <div class="small">출처 표준화: 굴절계 사진·영상, 선별 기준표, 포장 공정 컷과 함께 제시.</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>6. 상세페이지 반영 전략</h2>
+      <h3>HERO 영역(첫 화면) 구성</h3>
+      <ul class="list">
+        <li>헤드라인: “오늘 수확→내일 출하, 평균 {평균당도}°Bx 참외”</li>
+        <li>서브: “{산지}/{품종}, {선별기준} 선별 · 보냉/완충 포장 · 이력추적 {이력코드} 연동”</li>
+        <li>신뢰 블록: 당도 실측 사진, 수확일·LOT, 포장 실사 썸네일 3종</li>
+        <li>CTA: “이번 수확분 예약”, “가정용/선물용 선택”</li>
+      </ul>
+      <h3>증빙 중심 본문 모듈</h3>
+      <ul class="list">
+        <li>모듈1 품질지표: 평균/분포 당도(°Bx), 개체 편차 안내</li>
+        <li>모듈2 산지·농가: {농가명} 프로필, 재배 방식, 인증(있을 경우)</li>
+        <li>모듈3 선별·등급: 크기·중량·외관 기준 도표</li>
+        <li>모듈4 포장·배송: 포장층 구성, 테스트 결과, 지역별 SLA</li>
+        <li>모듈5 활용장면: 아이간식·도시락 컷, 손질법(씨 제거/껍질)</li>
+        <li>모듈6 보관·섭취 팁: 온도, 숙성/식감 포인트</li>
+        <li>모듈7 이력·신뢰: QR/LOT로 조회, 교환/품질보증 정책</li>
+      </ul>
+      <h3>데이터 → 문장 매핑 규칙(ONEFLOW 자동화)</h3>
+      <div class="grid kv">
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{평균당도}</div>
+          <div class="k small">문장</div><div class="small">“평균 {평균당도}°Bx(개체차 있음)”</div>
+        </div>
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{수확일} / {출하일}</div>
+          <div class="k small">문장</div><div class="small">“{수확일} 수확 → {출하일} 출하”</div>
+        </div>
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{선별기준}</div>
+          <div class="k small">문장</div><div class="small">“{선별기준} 선별(가정용/선물용 선택)”</div>
+        </div>
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{포장방식}</div>
+          <div class="k small">문장</div><div class="small">“완충+보냉 {포장방식} 적용(여름철 권장)”</div>
+        </div>
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{이력코드}</div>
+          <div class="k small">문장</div><div class="small">“이력추적 {이력코드}로 확인 가능”</div>
+        </div>
+        <div class="card cols-4">
+          <div class="k">필드</div><div class="v code">{SLA}</div>
+          <div class="k small">문장</div><div class="small">“{지역} {SLA} 도착 가능(예상)”</div>
+        </div>
+      </div>
+      <div class="foot">과장 표현 대신, 실측 수치·공정 사진/영상과 함께 진술.</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>7. 썸네일/대표이미지 반영 전략</h2>
+      <h3>문구 포뮬러</h3>
+      <ul class="list">
+        <li>[숫자+신뢰] “평균 {평균당도}°Bx | 오늘 수확→내일 출하”</li>
+        <li>[용도] “아이간식 한입 참외 | 가정용·선물용 선택”</li>
+        <li>[안심배송] “완충+보냉 포장 | 눌림 최소화 테스트”</li>
+      </ul>
+      <h3>디자인 가이드(4:5 / 1:1)</h3>
+      <ul class="list">
+        <li>상단 좌: 브랜드/농가명 배지, 우: 산지/품종</li>
+        <li>중앙: 절단면 근접(과즙/씨 부위 식감 전달), 작은 프레임에 굴절계 수치</li>
+        <li>하단: 배송 SLA·출하일, 선택 옵션(가정용/선물용)</li>
+      </ul>
+    </div>
+
+    <div class="card cols-12">
+      <h2>8. ONEFLOW 적용 가이드</h2>
+      <div class="step">데이터 연동: {농가명}, {산지}, {품종}, {평균당도}, {당도분포}, {수확일}, {출하일}, {선별기준}, {포장방식}, {SLA}, {이력코드}, {LOT}</div>
+      <div class="step">HERO/썸네일 자동 생성: 위 필드 매핑으로 문구·배지·아이콘 자동 배치</div>
+      <div class="step">증빙 업로드: 굴절계 사진·포장 공정컷·선별표 PDF 첨부 → 모듈에 자동 삽입</div>
+      <div class="step">A/B 테스트: 헤드라인(“오늘 수확” vs “평균 {평균당도}°Bx”), CTA(예약 vs 알림), 썸네일 2안 교차</div>
+      <div class="step">품질 가드: 평균당도 임계치 미만 or 고온 주의 기간 시, 자동으로 표현 완화 및 보관/얼음물 침지 팁 노출</div>
+      <div class="step">사후 분석: 클릭률·장바구니율·구매율·반품사유(눌림/맛) 대시보드화 → 문구 최적화 루프</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>9. 바로 사용할 수 있는 문구 예시</h2>
+      <div class="small">괄호 {}는 ONEFLOW 데이터로 자동 치환됩니다. 실제 측정·출하 데이터가 있을 때만 사용하세요.</div>
+      <h3>HERO 헤드라인</h3>
+      <ul class="list">
+        <li>오늘 수확→내일 출하, 평균 {평균당도}°Bx 참외</li>
+        <li>{산지} {품종} 참외, {선별기준} 선별로 식감 균일하게</li>
+        <li>아이간식으로 담기 좋은 사이즈, 가정용·선물용 선택</li>
+        <li>이력추적 {이력코드} 확인 가능한 산지직송</li>
+        <li>여름철 안심 포장: 완충+보냉 {포장방식}</li>
+        <li>{수확일} 수확 LOT {LOT}, 신선함을 기록합니다</li>
+      </ul>
+      <h3>썸네일/대표이미지 문구</h3>
+      <ul class="list">
+        <li>평균 {평균당도}°Bx | 오늘 수확</li>
+        <li>아이간식 한입 참외</li>
+        <li>가정용/선물용 선택</li>
+        <li>완충+보냉 포장</li>
+        <li>{산지} {품종} · {선별기준}</li>
+        <li>{출하일} 출하 · {SLA} 도착(예상)</li>
+        <li>이력추적 {이력코드}</li>
+        <li>수량 한정: {출하일} 수확분</li>
+      </ul>
+      <h3>릴스 오프닝 3초(후킹)</h3>
+      <ul class="list">
+        <li>“평균 {평균당도}°Bx, 참외 단맛부터 확인해요.”</li>
+        <li>“오늘 수확 컷, 바로 측정 들어갑니다.”</li>
+        <li>“아이 간식으로 한입 사이즈, 씨 제거 팁도 보여드릴게요.”</li>
+        <li>“보냉 포장 풀어보며 눌림 상태 체크합니다.”</li>
+        <li>“마트행 대신 산지직송, 시간·신선도 비교해볼까요?”</li>
+        <li>“{산지} {품종}이 왜 유명한지 단면으로 설명드릴게요.”</li>
+        <li>“이력 {이력코드}로 신뢰부터 확인하고 먹습니다.”</li>
+        <li>“{출하일} 출하분, 당도 분포는 이렇습니다.”</li>
+      </ul>
+      <h3>전환 CTA(버튼/링크)</h3>
+      <div>
+        <span class="cta-btn">이번 수확분 예약</span>
+        <span class="cta-btn">가정용/선물용 선택</span>
+        <span class="cta-btn">오늘 {주문마감시각} 이전 주문 시 {도착가능일} 도착(예상)</span>
+        <span class="cta-btn">다음 출하 알림 받기</span>
+        <span class="cta-btn">포장 확인하기</span>
+        <span class="cta-btn">이력추적 조회</span>
+        <span class="cta-btn">단체/선물세트 문의</span>
+      </div>
+      <h3>섹션 타이틀/설명</h3>
+      <ul class="list">
+        <li>당도·식감 데이터: 평균 {평균당도}°Bx, 개체차 안내</li>
+        <li>산지와 사람: {산지} {농가명}의 재배 이야기</li>
+        <li>선별 기준: {선별기준} 상세 공개</li>
+        <li>포장·배송: 완충/보냉 공정과 테스트 결과</li>
+        <li>보관·섭취 팁: 여름철 최적 온도/세척 가이드</li>
+        <li>이력·품질보증: LOT {LOT} / {이력코드}로 확인</li>
+      </ul>
+      <div class="foot">표기 유의: 당도는 재배·수확시기·개체에 따라 달라질 수 있습니다. 배송일정은 지역·택배사 상황에 따라 변동될 수 있습니다.</div>
+    </div>
+
+    <div class="card cols-12">
+      <h2>10. 결론</h2>
+      <ul class="list">
+        <li>이번 샘플은 작지만 “당도 수치 선도 + 신선배송 + 가족/아이간식”의 3요소가 일관되게 관찰됨.</li>
+        <li>상세페이지·썸네일·릴스 스크립트에 위 요소를 “실측/출하/포장/이력 데이터”와 함께 배치할 때 전환 효율을 기대할 수 있음.</li>
+        <li class="warn">데이터 불일치(참외 검색/포도 원문)로 인한 편향 가능성이 있으므로, 참외 실측 데이터로 교차검증 후 문구를 최종 확정할 것.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
